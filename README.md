@@ -63,6 +63,19 @@ whose digest changed are cloned and pushed. Git sync, topic sync and archive syn
 three independent flags, so a project that merely flipped its archived bit costs two API
 calls and no clone.
 
+### Skipping the scan entirely
+
+GitLab bumps `last_activity_at` on push, and it is already present in the enumeration
+response. If it has not moved since the last *fully successful* sync, the refs cannot have
+changed, so the `ls-remote` is skipped outright. Most Manjaro projects are dormant, so a
+steady-state run scans a small fraction of the 2039 and finishes in minutes rather than
+the ~85 min a full scan costs.
+
+The skip is deliberately conservative — it only applies when the stored topics and
+archived bit also match, so a project whose previous run failed is always retried even
+though upstream has been quiet since. Entries written before this existed have no
+`last_activity_at` and are re-scanned once.
+
 ### GitLab's rate budget sets the floor
 
 `gitlab.manjaro.org` enforces `throttle_unauthenticated_git_http` at **60 anonymous git

@@ -188,12 +188,19 @@ def main(argv: list[str] | None = None) -> int:
     state = state_mod.load()
     _log(f"{len(state.get('projects', {}))} projects in state; "
          f"GitLab allows ~{state_mod.GIT_RATE_PER_MIN} git req/min")
-    digests, failed_paths = _digest_all(projects)
+
+    quiet, to_scan = [], []
+    for p in projects:
+        (quiet if state_mod.can_skip_scan(p, state) else to_scan).append(p)
+    if quiet:
+        _log(f"{len(quiet)} unchanged since last sync (last_activity_at), "
+             f"scanning {len(to_scan)}")
+    digests, failed_paths = _digest_all(to_scan)
 
     empty = 0
     pending: list[state_mod.Work] = []
-    skipped = 0
-    for p in projects:
+    skipped = len(quiet)
+    for p in to_scan:
         if p.path not in digests:
             continue
         digest = digests[p.path]

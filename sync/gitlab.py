@@ -3,7 +3,10 @@
 from __future__ import annotations
 
 import json
+import random
 import re
+import time
+import urllib.error
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
@@ -25,6 +28,10 @@ GROUPS = [
 TOPIC_RE = re.compile(r"[a-z0-9][a-z0-9-]*")
 NAME_RE = re.compile(r"[A-Za-z0-9._-]+")
 
+API_TIMEOUT = 60
+API_ATTEMPTS = 5
+API_BACKOFF = 3.0
+
 MAX_NAME_LEN = 100
 MAX_TOPIC_LEN = 50
 MAX_TOPICS = 20
@@ -37,6 +44,7 @@ class Project:
     description: str
     default_branch: str | None
     archived: bool
+    last_activity_at: str
     topics: tuple[str, ...]
 
     @property
@@ -45,9 +53,27 @@ class Project:
 
 
 def _get_json(url: str) -> list[dict]:
-    req = urllib.request.Request(url, headers={"Accept": "application/json"})
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        return json.load(resp)
+    """Fetch one API page, retrying transient failures.
+
+    Enumeration is the first phase of a multi-hour run, and gitlab.manjaro.org
+    intermittently times out or 5xxs under load. Without retries a single blip
+    aborts the whole sync before any work happens.
+    """
+    last: Exception | None = None
+    for attempt in range(1, API_ATTEMPTS + 1):
+        req = urllib.request.Request(url, headers={"Accept": "application/json"})
+        try:
+            with urllib.request.urlopen(req, timeout=API_TIMEOUT) as resp:
+                return json.load(resp)
+        except urllib.error.HTTPError as e:
+            if e.code < 500 and e.code != 429:
+                raise
+            last = e
+        except (urllib.error.URLError, TimeoutError, OSError) as e:
+            last = e
+        if attempt < API_ATTEMPTS:
+            time.sleep(API_BACKOFF * attempt + random.uniform(0, 2))
+    raise SystemExit(f"GitLab API failed after {API_ATTEMPTS} attempts: {url}: {last}")
 
 
 def _group_projects(group: str) -> list[dict]:
@@ -74,6 +100,7 @@ def _to_project(raw: dict) -> Project:
         description=raw.get("description") or "",
         default_branch=raw.get("default_branch"),
         archived=bool(raw.get("archived")),
+        last_activity_at=raw.get("last_activity_at") or "",
         topics=topics,
     )
     _validate(p)

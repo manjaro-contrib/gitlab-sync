@@ -123,5 +123,26 @@ def record(state: dict, p: Project, digest: str, synced_at: str) -> None:
         "digest": digest,
         "topics": list(p.topics),
         "archived": p.archived,
+        "last_activity_at": p.last_activity_at,
         "synced_at": synced_at,
     }
+
+
+def can_skip_scan(p: Project, state: dict) -> bool:
+    """True when enumeration alone proves nothing can have changed.
+
+    GitLab bumps `last_activity_at` on push, so an unchanged value means the refs
+    are unchanged and the ~1.7 s `ls-remote` is pure waste. Only safe when the
+    stored entry is a complete success: topics and the archived bit are mirrored
+    independently of refs, and a project whose previous run failed must be
+    retried even though upstream has been quiet since.
+    """
+    entry = state.get("projects", {}).get(p.path)
+    if entry is None:
+        return False
+    return (
+        bool(p.last_activity_at)
+        and entry.get("last_activity_at") == p.last_activity_at
+        and entry.get("topics") == list(p.topics)
+        and entry.get("archived") == p.archived
+    )
