@@ -1,0 +1,41 @@
+name: sync
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "max repos to process (0 = all)"
+        default: "0"
+      dry_run:
+        type: boolean
+        default: false
+concurrency:
+  group: mirror-sync
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: echo "::add-mask::${{ secrets.GH_MIRROR_TOKEN }}"
+      - name: Sync
+        env:
+          GH_MIRROR_TOKEN: ${{ secrets.GH_MIRROR_TOKEN }}
+        run: |
+          python -m sync \
+            --limit "${{ inputs.limit || 0 }}" \
+            ${{ inputs.dry_run && '--dry-run' || '' }}
+      - name: Commit state
+        if: always() && !inputs.dry_run
+        run: |
+          git config user.name "mirror-sync"
+          git config user.email "mirror-sync@users.noreply.github.com"
+          git add state/refs.json
+          git diff --cached --quiet || git commit -m "state: sync $(date -u +%FT%TZ)"
+          git push
