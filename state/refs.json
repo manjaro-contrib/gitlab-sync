@@ -1,4 +1,22 @@
 {
-  "projects": {},
+  "projects": {
+    "packages/extra/element.io": {
+      "archived": false,
+      "digest": "sha256:eb399830fd8bd71b077bad169d51d2ba1339d3dcf520a8cb650436a2f3147485",
+      "synced_at": "2026-08-06T12:11:08Z",
+      "topics": [
+        "packages",
+        "extra"
+      ]
+    },
+    "security-overlay/atril": {
+      "archived": true,
+      "digest": "sha256:e25836bf08c2cf43b686f713eed0a4c1a9eec19514478e8388621bf8f5b46d18",
+      "synced_at": "2026-08-06T12:22:21Z",
+      "topics": [
+        "security-overlay"
+      ]
+    }
+  },
   "version": 1
 }

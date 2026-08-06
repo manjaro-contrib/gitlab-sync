@@ -17,6 +17,13 @@ MAX_ATTEMPTS = 5
 CREATE_INTERVAL = 1.0
 MAX_DESCRIPTION = 350
 
+# Org automation stamps freshly created manjaro-contrib repos with its own topics
+# (`arch`, `package`) a second or two after creation, clobbering ours. Setting
+# topics once is therefore not enough on a new repo: confirm they stuck, and
+# re-apply if something raced us.
+TOPIC_CONFIRM_ATTEMPTS = 4
+TOPIC_CONFIRM_DELAY = 4.0
+
 
 class GitHubError(RuntimeError):
     pass
@@ -97,7 +104,15 @@ class GitHub:
         return body.get("names", [])
 
     def set_topics(self, name: str, topics: list[str]) -> None:
-        self._request("PUT", f"/repos/{ORG}/{name}/topics", {"names": topics})
+        """Set topics and make them stick despite the org's auto-tagging race."""
+        want = sorted(topics)
+        for attempt in range(1, TOPIC_CONFIRM_ATTEMPTS + 1):
+            self._request("PUT", f"/repos/{ORG}/{name}/topics", {"names": topics})
+            if attempt == TOPIC_CONFIRM_ATTEMPTS:
+                return
+            time.sleep(TOPIC_CONFIRM_DELAY)
+            if sorted(self.get_topics(name)) == want:
+                return
 
 
 def _throttle_delay(e: urllib.error.HTTPError) -> float | None:

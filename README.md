@@ -46,6 +46,11 @@ or via the API:
 https://api.github.com/search/repositories?q=org:manjaro-contrib+topic:extra
 ```
 
+Note: an org automation stamps freshly created `manjaro-contrib` repos with its own
+topics (`arch`, `package`) a second or two after creation, which silently clobbers a
+single `PUT`. `set_topics()` therefore re-reads and re-applies until the intended topics
+stick — without that, every newly mirrored repo ends up mistagged.
+
 What topics do *not* restore: nesting (a repo tagged `packages` + `extra` does not encode
 that `extra` lives inside `packages` — list order is the only hint) and per-group
 permissions or teams.
