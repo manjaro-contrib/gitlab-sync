@@ -9,6 +9,7 @@ import subprocess
 import sys
 import tempfile
 import threading
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 
@@ -23,6 +24,39 @@ SYNC_WORKERS = 4
 CLONE_ATTEMPTS = 4
 CLONE_BACKOFF = 5.0
 FLUSH_EVERY = 25
+
+# Both long phases are otherwise silent for over an hour, which is
+# indistinguishable from a hang in CI logs.
+PROGRESS_EVERY = 25
+
+
+def _log(msg: str) -> None:
+    print(msg, flush=True)
+
+
+class Progress:
+    """Periodic 'n/total, rate, ETA' line for a long phase."""
+
+    def __init__(self, label: str, total: int, every: int = PROGRESS_EVERY):
+        self._label = label
+        self._total = total
+        self._every = every
+        self._done = 0
+        self._start = time.monotonic()
+        self._lock = threading.Lock()
+        _log(f"{label}: 0/{total}")
+
+    def tick(self, note: str = "") -> None:
+        with self._lock:
+            self._done += 1
+            done = self._done
+            elapsed = time.monotonic() - self._start
+        if done % self._every and done != self._total:
+            return
+        rate = done / elapsed * 60 if elapsed else 0.0
+        eta = (self._total - done) / (done / elapsed) if done and elapsed else 0.0
+        _log(f"{self._label}: {done}/{self._total} "
+             f"({rate:.0f}/min, eta {eta / 60:.0f}m){note}")
 
 
 def _now() -> str:
@@ -105,6 +139,7 @@ class Syncer:
 def _digest_all(projects: list[Project]) -> tuple[dict[str, str | None], list[str]]:
     digests: dict[str, str | None] = {}
     failures: list[str] = []
+    progress = Progress("scanning refs", len(projects))
     with ThreadPoolExecutor(max_workers=LS_REMOTE_WORKERS) as pool:
         futures = {pool.submit(state_mod.remote_digest, p.clone_url): p for p in projects}
         for fut in as_completed(futures):
@@ -113,7 +148,8 @@ def _digest_all(projects: list[Project]) -> tuple[dict[str, str | None], list[st
                 digests[p.path] = fut.result()
             except Exception as e:
                 failures.append(p.path)
-                print(f"ls-remote failed {p.path}: {_brief(e)}", file=sys.stderr)
+                print(f"ls-remote failed {p.path}: {_brief(e)}", file=sys.stderr, flush=True)
+            progress.tick()
     return digests, failures
 
 
@@ -138,7 +174,9 @@ def main(argv: list[str] | None = None) -> int:
         print("GH_MIRROR_TOKEN is not set", file=sys.stderr)
         return 2
 
+    _log("enumerating GitLab projects...")
     projects = list_projects()
+    _log(f"enumerated {len(projects)} projects")
     if args.only:
         wanted = set(args.only)
         projects = [p for p in projects if p.path in wanted]
@@ -148,6 +186,8 @@ def main(argv: list[str] | None = None) -> int:
             return 2
 
     state = state_mod.load()
+    _log(f"{len(state.get('projects', {}))} projects in state; "
+         f"GitLab allows ~{state_mod.GIT_RATE_PER_MIN} git req/min")
     digests, failed_paths = _digest_all(projects)
 
     empty = 0
@@ -167,8 +207,11 @@ def main(argv: list[str] | None = None) -> int:
         else:
             skipped += 1
 
-    if args.limit > 0:
+    if args.limit > 0 and len(pending) > args.limit:
+        _log(f"limiting to {args.limit} of {len(pending)} projects needing work")
         pending = pending[: args.limit]
+
+    _log(f"{len(pending)} need work, {skipped} unchanged, {empty} empty")
 
     if args.dry_run:
         for work in pending:
@@ -185,6 +228,7 @@ def main(argv: list[str] | None = None) -> int:
     syncer = Syncer(gh, token, state)
     synced = 0
     failures = list(failed_paths)
+    progress = Progress("syncing", len(pending)) if pending else None
     with ThreadPoolExecutor(max_workers=SYNC_WORKERS) as pool:
         futures = {pool.submit(syncer.sync, w): w for w in pending}
         for fut in as_completed(futures):
@@ -194,7 +238,10 @@ def main(argv: list[str] | None = None) -> int:
                 synced += 1
             except Exception as e:
                 failures.append(work.project.path)
-                print(f"failed {work.project.path}: {_brief(e)}", file=sys.stderr)
+                print(f"failed {work.project.path}: {_brief(e)}",
+                      file=sys.stderr, flush=True)
+            if progress:
+                progress.tick(f" failed={len(failures)}" if failures else "")
     syncer.flush()
 
     topics_only = sum(1 for w in pending if not w.git and w.topics)

@@ -129,6 +129,16 @@ python -m sync --limit 450                        # bootstrap slice
 python -m sync                                    # everything that changed
 ```
 
+Both long phases report progress every 25 projects with a rate and ETA, so a run is never
+silent for more than a minute or two:
+
+```
+enumerating GitLab projects...
+enumerated 2039 projects
+scanning refs: 500/2039 (24/min, eta 64m)
+syncing: 25/450 (12/min, eta 35m)
+```
+
 Exit code is `1` if any project failed, `0` otherwise. Every run ends with a summary line:
 
 ```
