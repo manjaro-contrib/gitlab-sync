@@ -1,12 +1,12 @@
 name: sync
 on:
   schedule:
-    - cron: "17 */6 * * *"
+    - cron: "17 * * * *"
   workflow_dispatch:
     inputs:
       limit:
         description: "max repos to process (0 = all)"
-        default: "400"
+        default: "450"
       dry_run:
         type: boolean
         default: false
@@ -28,7 +28,7 @@ permissions:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 330
+    timeout-minutes: 55
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
@@ -40,7 +40,7 @@ jobs:
           GH_MIRROR_TOKEN: ${{ secrets.GH_MIRROR_TOKEN }}
         run: |
           uv run python -m sync \
-            --limit "${{ inputs.limit || 400 }}" \
+            --limit "${{ inputs.limit || 450 }}" \
             ${{ inputs.only && format('--only {0}', inputs.only) || '' }} \
             --max-age-days "${{ inputs.max_age_days || 730 }}" \
             ${{ inputs.include_stale && '--include-stale' || '' }} \

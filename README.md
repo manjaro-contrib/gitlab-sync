@@ -175,14 +175,17 @@ A deferred project does not fail the run's exit code.
 
 ## Bootstrap
 
-The first population creates ~619 repos, and GitHub's secondary limit is 500
-content-creating requests per hour. Dispatch the workflow with `limit: 450`, wait an hour,
-then run it again — **two runs** cover the whole set. Afterwards scheduled runs create
-almost nothing and `limit: 0` is correct.
+No manual procedure needed: the hourly schedule drains the backlog by itself. The first
+population is ~619 repos against GitHub's 500 content-creations/hour, so early runs create
+what they can and report the rest as `deferred`; each following hour picks those up until
+the count reaches zero.
 
-Budget the time: a first run pays a ~25 min ref scan for the 619 in-scope projects, and
-the clones share the same GitLab budget. Later runs skip most of that scan via
-`last_activity_at` and finish in minutes.
+Observed on the first real run: `synced=207 deferred=192 skipped=117 failed=1` — the
+deferrals are the rate limiter working, not errors, and they cost nothing because progress
+is already recorded in `state/refs.json`.
+
+A first run pays a ~25 min ref scan for the 619 in-scope projects; later runs skip most of
+it via `last_activity_at`.
 
 ## Running locally
 
@@ -220,7 +223,17 @@ synced=N topics_only=N archived_changed=N skipped=N empty=N failed=N
 
 ## Schedule
 
-Every 6 hours (`cron: "17 */6 * * *"`), chosen because the busiest group (`packages`) sees
-several pushes per day. Runs are serialized by a `concurrency` group so two jobs never
-race on `state/refs.json`. The state commit runs with `always()`, so a run killed by the
-job timeout still records its partial progress.
+Hourly (`cron: "17 * * * *"`). A full run measures 24-32 min — most of the 619 projects
+skip their ref scan via `last_activity_at` — so an hourly cadence keeps mirrors close to
+upstream without runs overlapping.
+
+`timeout-minutes: 55` is deliberately under the interval: runs are serialized by a
+`concurrency` group, so a job that hung for hours would block every trigger behind it.
+Better to lose one run than stall the schedule.
+
+The scheduled `--limit 450` sits under GitHub's 500 content-creations/hour. That pairs
+with the hourly cadence: while a backlog of new repos is draining, each run creates what
+it can and defers the rest, and the next hour picks them up — no manual bootstrap loop.
+
+The state commit runs with `always()`, so a run killed by the timeout still records its
+partial progress.
