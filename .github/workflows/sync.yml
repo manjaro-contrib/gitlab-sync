@@ -10,6 +10,9 @@ on:
       dry_run:
         type: boolean
         default: false
+      only:
+        description: "GitLab path to sync alone, e.g. applications/calamares"
+        default: ""
 concurrency:
   group: mirror-sync
   cancel-in-progress: false
@@ -31,6 +34,7 @@ jobs:
         run: |
           uv run python -m sync \
             --limit "${{ inputs.limit || 400 }}" \
+            ${{ inputs.only && format('--only {0}', inputs.only) || '' }} \
             ${{ inputs.dry_run && '--dry-run' || '' }}
       - name: Commit state
         if: always() && !inputs.dry_run
