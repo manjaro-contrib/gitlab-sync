@@ -158,16 +158,23 @@ the clones share the same GitLab budget. Later runs skip most of that scan via
 
 ## Running locally
 
-Python 3.11+, standard library only — no dependencies, no install step.
+Managed with [uv](https://docs.astral.sh/uv/). `uv run` installs the interpreter pinned in
+`.python-version` on first use, so there is nothing to set up by hand.
+
+The tool itself is **standard library only** — `dependencies = []` in `pyproject.toml` is
+deliberate, not an oversight. A sync run needs no resolution step and cannot break because
+of a dependency release.
 
 ```
 export GH_MIRROR_TOKEN=github_pat_…
 
-python -m sync --dry-run                          # plan only; writes and pushes nothing
-python -m sync --only packages/extra/element.io   # one project, for debugging
-python -m sync --limit 450                        # bootstrap slice
-python -m sync                                    # everything that changed
+uv run python -m sync --dry-run                          # plan only; writes and pushes nothing
+uv run python -m sync --only packages/extra/element.io   # one project, for debugging
+uv run python -m sync --limit 450                        # bootstrap slice
+uv run python -m sync                                    # everything that changed
 ```
+
+`uv run gitlab-sync` works too, via the console script.
 
 Both long phases report progress every 25 projects with a rate and ETA, so a run is never
 silent for more than a minute or two:

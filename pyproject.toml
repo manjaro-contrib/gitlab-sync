@@ -1,0 +1,19 @@
+[project]
+name = "gitlab-sync"
+version = "1.0.0"
+description = "Mirror gitlab.manjaro.org projects into the manjaro-contrib GitHub org"
+requires-python = ">=3.11"
+# Intentionally empty: the tool is standard library only, so a sync run needs
+# no resolution step and cannot break on a dependency release.
+dependencies = []
+
+[project.scripts]
+gitlab-sync = "sync.main:main"
+
+[build-system]
+requires = ["uv_build>=0.11,<0.12"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "sync"
+module-root = ""
