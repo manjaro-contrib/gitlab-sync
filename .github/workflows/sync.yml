@@ -31,9 +31,10 @@ jobs:
     timeout-minutes: 55
     steps:
       - uses: actions/checkout@v7
-      # No cache: the project has no dependencies, so there is nothing to
-      # restore and v9 no longer prunes what it stores.
-      - uses: astral-sh/setup-uv@v9
+      # Pinned to the exact release: setup-uv publishes no floating v9 tag
+      # (v7 is the newest major alias), so @v9 fails to resolve.
+      # No cache either: the project has no dependencies to restore.
+      - uses: astral-sh/setup-uv@v9.0.0
       - run: echo "::add-mask::${{ secrets.GH_MIRROR_TOKEN }}"
       - name: Sync
         env:
