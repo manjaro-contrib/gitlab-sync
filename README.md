@@ -24,8 +24,25 @@ everything including archived projects with `--include-stale`.
 Nothing is ever deleted on GitHub. A project that falls out of scope — archived, gone
 dormant, or removed upstream — keeps its mirror as-is.
 
-Mirrors have issues, wikis and projects disabled — they are read-only copies, and
-discussion belongs on GitLab.
+Mirrors have issues, wikis, projects **and Actions** disabled — they are backups, and
+discussion belongs on GitLab. Actions matters most: upstream repos carry their own
+`.github/workflows`, and GitHub would otherwise schedule them here, running Manjaro's CI
+out of the mirror org on every push and cron.
+
+### The token needs `Workflows: Read and write`
+
+Some projects keep `.github/workflows` files on non-default branches (`applications/calamares`
+has 5-8 of them on its `*-stable` branches). Pushing any commit that touches those paths is
+rejected pre-receive unless the token carries the workflow permission:
+
+```
+! [remote rejected] 3.2.x-stable -> 3.2.x-stable (refusing to allow a Personal Access
+  Token to create or update workflow `.github/workflows/issues.yml` without `workflow` scope)
+```
+
+This is enforced on the **token**, not the repository — disabling Actions on the mirror does
+not lift it (verified). Without the permission those projects fail every run, and they fail
+*after* the clone, so the cost is paid before the rejection.
 
 ## Naming: flattening, and topics for the hierarchy
 

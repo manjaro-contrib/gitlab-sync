@@ -102,6 +102,20 @@ class GitHub:
                 time.sleep(wait)
             self._last_create = time.monotonic()
 
+    def disable_actions(self, name: str) -> None:
+        """Stop mirrored workflows from ever running.
+
+        These are backups. Upstream repos carry their own `.github/workflows`,
+        and GitHub would happily schedule them here -- running Manjaro's CI in a
+        mirror org on every push and cron. Best effort: a repo archived moments
+        later, or one the token cannot administer, must not fail the sync.
+        """
+        try:
+            self._request("PUT", f"/repos/{ORG}/{name}/actions/permissions",
+                          {"enabled": False})
+        except GitHubError as e:
+            print(f"note: could not disable actions on {name}: {e}", flush=True)
+
     def edit_repo(self, name: str, **fields) -> dict:
         return self._request("PATCH", f"/repos/{ORG}/{name}", fields) or {}
 

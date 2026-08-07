@@ -103,7 +103,10 @@ class Syncer:
 
     def sync(self, work: state_mod.Work) -> None:
         p = work.project
-        repo = self._gh.get_repo(p.name) or self._gh.create_repo(p)
+        repo = self._gh.get_repo(p.name)
+        if repo is None:
+            repo = self._gh.create_repo(p)
+            self._gh.disable_actions(p.name)
 
         if repo.get("archived"):
             self._gh.set_archived(p.name, False)
