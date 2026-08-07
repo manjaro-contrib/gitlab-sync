@@ -7,13 +7,9 @@ requires-python = ">=3.11"
 # no resolution step and cannot break on a dependency release.
 dependencies = []
 
-[project.scripts]
-gitlab-sync = "sync.main:main"
-
-[build-system]
-requires = ["uv_build>=0.11,<0.12"]
-build-backend = "uv_build"
-
-[tool.uv.build-backend]
-module-name = "sync"
-module-root = ""
+# Not a distributable package -- `uv run python -m sync` runs it straight from
+# the checkout. Declaring a build backend only pinned us to uv's release cadence
+# (a <0.12 bound started warning the moment CI moved to uv 0.12) for a wheel
+# nothing ever installs.
+[tool.uv]
+package = false

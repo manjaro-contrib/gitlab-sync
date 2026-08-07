@@ -202,8 +202,6 @@ uv run python -m sync --limit 450                        # bootstrap slice
 uv run python -m sync                                    # everything that changed
 ```
 
-`uv run gitlab-sync` works too, via the console script.
-
 Both long phases report progress every 25 projects with a rate and ETA, so a run is never
 silent for more than a minute or two:
 
