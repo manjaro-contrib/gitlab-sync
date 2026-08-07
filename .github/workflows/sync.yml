@@ -51,14 +51,21 @@ jobs:
         run: |
           git config user.name "mirror-sync"
           git config user.email "mirror-sync@users.noreply.github.com"
-          git add state/refs.json
-          git diff --cached --quiet && exit 0
-          git commit -m "state: sync $(date -u +%FT%TZ)"
-          # A run that took hours can race a commit that landed meanwhile.
-          # The sync work already succeeded, so retry rather than fail it.
+          git diff --quiet state/refs.json && exit 0
+          # Overlapping runs both rewrite the whole file, so rebasing hits a
+          # content conflict every time. The conflict is spurious: state is a
+          # cache keyed by project path, so union both sides instead of
+          # picking a winner and losing a run's progress.
+          cp state/refs.json /tmp/ours.json
           for i in 1 2 3 4 5; do
+            git add state/refs.json
+            git commit -qm "state: sync $(date -u +%FT%TZ)" || true
             git push && exit 0
-            git pull --rebase --autostash origin main || exit 1
+            git fetch -q origin main
+            git show origin/main:state/refs.json > /tmp/theirs.json
+            git reset -q --hard origin/main
+            uv run python -m sync.merge_state /tmp/ours.json /tmp/theirs.json state/refs.json
+            git diff --quiet state/refs.json && exit 0
           done
           echo "::error::could not push state after 5 attempts"
           exit 1

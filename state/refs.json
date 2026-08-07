@@ -5418,6 +5418,16 @@
         "release-plan"
       ]
     },
+    "security-overlay/atril": {
+      "archived": true,
+      "digest": "sha256:e25836bf08c2cf43b686f713eed0a4c1a9eec19514478e8388621bf8f5b46d18",
+      "last_activity_at": "2019-09-16T09:30:31.133Z",
+      "synced_at": "2026-08-07T11:55:21Z",
+      "topics": [
+        "gitlab-mirror",
+        "security-overlay"
+      ]
+    },
     "tools/development-tools/manjaro-chrootbuild": {
       "archived": false,
       "digest": "sha256:3cff3801b6335fed61263a37d0d8754ea10e008a4c2ca60e90e964e4292b4739",
