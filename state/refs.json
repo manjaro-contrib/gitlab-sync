@@ -19,6 +19,16 @@
         "applications"
       ]
     },
+    "applications/calamares": {
+      "archived": false,
+      "digest": "sha256:a07aa889e2be5ac6ec0af23d68a5d4bb58f078f3aca47db263205ee60a4ad037",
+      "last_activity_at": "2026-05-28T06:06:51.944Z",
+      "synced_at": "2026-08-07T09:40:02Z",
+      "topics": [
+        "gitlab-mirror",
+        "applications"
+      ]
+    },
     "applications/gnome-layout-switcher": {
       "archived": false,
       "digest": "sha256:d1ed60bf60d07c2cdd83fa5eeccb7c92e2148236d94a6f4b12367dd2b954b4c0",
