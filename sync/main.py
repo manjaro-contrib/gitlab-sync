@@ -10,7 +10,8 @@ import sys
 import tempfile
 import threading
 import time
-from concurrent.futures import ThreadPoolExecutor, as_completed
+import itertools
+from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, as_completed, wait
 from datetime import datetime, timezone
 
 from . import state as state_mod
@@ -139,21 +140,52 @@ class Syncer:
             self._since_flush = 0
 
 
-def _digest_all(projects: list[Project]) -> tuple[dict[str, str | None], list[str]]:
+def _digest_all(projects: list[Project], state: dict, limit: int = 0):
+    """Digest refs, stopping early once `limit` projects need work.
+
+    Projects arrive most-recently-active first, so an early stop keeps the
+    busiest ones. Scanning is the dominant cost of a run -- ~1.7 s per project
+    against GitLab's rate budget -- and a capped run has no use for work it
+    cannot perform, so scanning the dormant tail is pure waste.
+
+    Returns (digests, failures, scanned, exhausted); `exhausted` is False when
+    the scan stopped early, meaning unscanned projects remain.
+    """
     digests: dict[str, str | None] = {}
     failures: list[str] = []
+    found = scanned = 0
+    exhausted = True
     progress = Progress("scanning refs", len(projects))
     with ThreadPoolExecutor(max_workers=LS_REMOTE_WORKERS) as pool:
-        futures = {pool.submit(state_mod.remote_digest, p.clone_url): p for p in projects}
-        for fut in as_completed(futures):
-            p = futures[fut]
-            try:
-                digests[p.path] = fut.result()
-            except Exception as e:
-                failures.append(p.path)
-                print(f"ls-remote failed {p.path}: {_brief(e)}", file=sys.stderr, flush=True)
-            progress.tick()
-    return digests, failures
+        it = iter(projects)
+        futures = {}
+        for p in itertools.islice(it, LS_REMOTE_WORKERS * 4):
+            futures[pool.submit(state_mod.remote_digest, p.clone_url)] = p
+        while futures:
+            done, _ = wait(set(futures), return_when=FIRST_COMPLETED)
+            for fut in done:
+                p = futures.pop(fut)
+                scanned += 1
+                try:
+                    digest = digests[p.path] = fut.result()
+                except Exception as e:
+                    failures.append(p.path)
+                    print(f"ls-remote failed {p.path}: {_brief(e)}",
+                          file=sys.stderr, flush=True)
+                else:
+                    if digest is not None and state_mod.evaluate(p, digest, state).any:
+                        found += 1
+                progress.tick()
+            if limit and found >= limit:
+                exhausted = False
+                for fut in futures:
+                    fut.cancel()
+                break
+            for p in itertools.islice(it, len(done)):
+                futures[pool.submit(state_mod.remote_digest, p.clone_url)] = p
+        else:
+            exhausted = True
+    return digests, failures, scanned, exhausted
 
 
 def _brief(e: Exception) -> str:
@@ -207,13 +239,20 @@ def main(argv: list[str] | None = None) -> int:
     quiet, to_scan = [], []
     for p in projects:
         (quiet if state_mod.can_skip_scan(p, state) else to_scan).append(p)
+    # Scan most-recently-active first so a capped run stops on the busy repos.
+    to_scan.sort(key=lambda p: p.last_activity_at, reverse=True)
     if quiet:
         _log(f"{len(quiet)} unchanged since last sync (last_activity_at), "
              f"scanning {len(to_scan)}")
-    digests, failed_paths = _digest_all(to_scan)
+    digests, failed_paths, scanned, exhausted = _digest_all(
+        to_scan, state, args.limit)
+    if not exhausted:
+        _log(f"stopped scanning at {scanned}/{len(to_scan)}: "
+             f"{args.limit} projects already need work")
 
     empty = 0
     pending: list[state_mod.Work] = []
+    # Unscanned projects are not "unchanged" -- their state is simply unknown.
     skipped = len(quiet)
     for p in to_scan:
         if p.path not in digests:

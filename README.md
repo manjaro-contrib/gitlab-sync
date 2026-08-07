@@ -120,6 +120,16 @@ archived bit also match, so a project whose previous run failed is always retrie
 though upstream has been quiet since. Entries written before this existed have no
 `last_activity_at` and are re-scanned once.
 
+### Capped runs stop scanning early
+
+With `--limit N`, the scan runs in most-recently-active order and stops as soon as N
+projects are found needing work — there is no point paying ~1.7 s per `ls-remote` for
+projects the run cannot get to anyway. Measured: a `--limit 5` run scanned **5 of 310**
+instead of all 310.
+
+This makes the hourly schedule cheap even while a backlog drains: the run finds its 450
+and stops, rather than scanning every project first.
+
 ### GitLab's rate budget sets the floor
 
 `gitlab.manjaro.org` enforces `throttle_unauthenticated_git_http` at **60 anonymous git
