@@ -1817,6 +1817,16 @@
         "profiles-and-settings"
       ]
     },
+    "profiles-and-settings/desktop-settings": {
+      "archived": false,
+      "digest": "sha256:6cbb529b443ee65622e52629df87cc6a03aeda61e1d39dc3999efa7d0693bf17",
+      "last_activity_at": "2026-07-04T14:31:17.932Z",
+      "synced_at": "2026-08-07T09:43:06Z",
+      "topics": [
+        "gitlab-mirror",
+        "profiles-and-settings"
+      ]
+    },
     "profiles-and-settings/iso-profiles": {
       "archived": false,
       "digest": "sha256:4fd0a7404ecaedb18f779e36c16fc2f5ef7593d2bb2b9dbfb5f0c2092284bf92",
