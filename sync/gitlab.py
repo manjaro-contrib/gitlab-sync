@@ -10,6 +10,7 @@ import urllib.error
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
+from datetime import datetime, timedelta, timezone
 
 GITLAB = "https://gitlab.manjaro.org"
 GROUPS = [
@@ -31,6 +32,10 @@ NAME_RE = re.compile(r"[A-Za-z0-9._-]+")
 API_TIMEOUT = 60
 API_ATTEMPTS = 5
 API_BACKOFF = 3.0
+
+# Stamped on every mirror so the org can be filtered down to repos this action
+# owns -- the org also holds hand-made repos that must never be touched.
+MARKER_TOPIC = "gitlab-mirror"
 
 MAX_NAME_LEN = 100
 MAX_TOPIC_LEN = 50
@@ -93,7 +98,7 @@ def _group_projects(group: str) -> list[dict]:
 
 def _to_project(raw: dict) -> Project:
     path = raw["path_with_namespace"]
-    topics = tuple(path.split("/")[:-1])
+    topics = (MARKER_TOPIC, *path.split("/")[:-1])
     p = Project(
         path=path,
         name=path.replace("/", "-"),
@@ -122,6 +127,28 @@ def _validate(p: Project) -> None:
             fail(f"namespace segment {t!r} is not a valid GitHub topic")
         if len(t) > MAX_TOPIC_LEN:
             fail(f"namespace segment {t!r} is {len(t)} chars, GitHub allows {MAX_TOPIC_LEN}")
+
+
+MAX_AGE_DAYS = 730
+
+
+def is_stale(p: Project, max_age_days: int = MAX_AGE_DAYS) -> bool:
+    """True for projects the mirror deliberately leaves behind.
+
+    Archived upstream, or untouched for over two years. Both signal a project
+    nobody is maintaining, and mirroring them costs creation quota and scan time
+    that the live packages need.
+    """
+    if p.archived:
+        return True
+    if not max_age_days or not p.last_activity_at:
+        return False
+    cutoff = datetime.now(timezone.utc) - timedelta(days=max_age_days)
+    try:
+        seen = datetime.fromisoformat(p.last_activity_at.replace("Z", "+00:00"))
+    except ValueError:
+        return False
+    return seen < cutoff
 
 
 def list_projects() -> list[Project]:

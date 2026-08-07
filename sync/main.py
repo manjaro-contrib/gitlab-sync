@@ -15,7 +15,7 @@ from datetime import datetime, timezone
 
 from . import state as state_mod
 from .github import ORG, GitHub, SecondaryLimit
-from .gitlab import Project, list_projects
+from .gitlab import MAX_AGE_DAYS, Project, is_stale, list_projects
 
 # Throughput is bounded by GitLab's 55/min git rate budget (see state.gitlab_rate),
 # not by worker count; these widths just keep the budget saturated.
@@ -167,6 +167,11 @@ def main(argv: list[str] | None = None) -> int:
                         help="enumerate and digest only; write and push nothing")
     parser.add_argument("--only", action="append", default=[], metavar="PATH",
                         help="restrict to a GitLab path (repeatable)")
+    parser.add_argument("--max-age-days", type=int, default=MAX_AGE_DAYS,
+                        metavar="N",
+                        help="skip projects untouched for N days (0 = no age limit)")
+    parser.add_argument("--include-stale", action="store_true",
+                        help="mirror archived and long-dormant projects too")
     args = parser.parse_args(argv)
 
     token = os.environ.get("GH_MIRROR_TOKEN")
@@ -177,6 +182,13 @@ def main(argv: list[str] | None = None) -> int:
     _log("enumerating GitLab projects...")
     projects = list_projects()
     _log(f"enumerated {len(projects)} projects")
+
+    if not args.include_stale:
+        live = [p for p in projects if not is_stale(p, args.max_age_days)]
+        dropped = len(projects) - len(live)
+        _log(f"skipping {dropped} stale (archived or untouched "
+             f"> {args.max_age_days}d); {len(live)} in scope")
+        projects = live
     if args.only:
         wanted = set(args.only)
         projects = [p for p in projects if p.path in wanted]

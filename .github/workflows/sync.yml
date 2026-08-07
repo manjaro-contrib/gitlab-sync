@@ -6,7 +6,7 @@ on:
     inputs:
       limit:
         description: "max repos to process (0 = all)"
-        default: "0"
+        default: "400"
       dry_run:
         type: boolean
         default: false
@@ -29,7 +29,7 @@ jobs:
           GH_MIRROR_TOKEN: ${{ secrets.GH_MIRROR_TOKEN }}
         run: |
           python -m sync \
-            --limit "${{ inputs.limit || 0 }}" \
+            --limit "${{ inputs.limit || 400 }}" \
             ${{ inputs.dry_run && '--dry-run' || '' }}
       - name: Commit state
         if: always() && !inputs.dry_run

@@ -1574,8 +1574,10 @@
     "packages/extra/element.io": {
       "archived": false,
       "digest": "sha256:eb399830fd8bd71b077bad169d51d2ba1339d3dcf520a8cb650436a2f3147485",
-      "synced_at": "2026-08-06T12:11:08Z",
+      "last_activity_at": "2026-08-05T13:57:57.815Z",
+      "synced_at": "2026-08-07T08:29:31Z",
       "topics": [
+        "gitlab-mirror",
         "packages",
         "extra"
       ]

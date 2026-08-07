@@ -5,16 +5,24 @@ into the [`manjaro-contrib`](https://github.com/manjaro-contrib) GitHub organiza
 
 ## Scope
 
-All **2029** non-empty GitLab projects are mirrored — **1454** active plus **575** archived.
-The only exclusion is the **10** empty projects: they advertise no refs, so a push would
-fail and an empty placeholder repo is noise. Emptiness is detected per run by ref digest,
-not by GitLab's `empty_repo` flag, so a project that gains its first commit is picked up
-automatically.
+**619** of GitLab's 2039 projects are mirrored — the ones that are actually alive.
+Excluded:
 
-The archived bit is mirrored **both ways**: archiving a project on GitLab archives its
-GitHub mirror on the next run, and un-archiving on GitLab un-archives it again.
+| excluded | count | why |
+| --- | --- | --- |
+| archived upstream | 575 | nobody maintains them |
+| untouched > 2 years | 845 | dormant; costs creation quota and scan time the live packages need |
+| empty | 10 | advertise no refs, so a push fails and the mirror is noise |
 
-Nothing is ever deleted on GitHub. A project removed upstream keeps its mirror.
+Emptiness is detected per run by ref digest, not by GitLab's `empty_repo` flag, so a
+project that gains its first commit is picked up automatically. Likewise a dormant project
+that receives a push re-enters scope on the next run by itself.
+
+Override the cutoff with `--max-age-days N` (`0` disables the age check), or mirror
+everything including archived projects with `--include-stale`.
+
+Nothing is ever deleted on GitHub. A project that falls out of scope — archived, gone
+dormant, or removed upstream — keeps its mirror as-is.
 
 Mirrors have issues, wikis and projects disabled — they are read-only copies, and
 discussion belongs on GitLab.
@@ -33,7 +41,15 @@ Verified across all GitLab paths: 0 collisions, 0 invalid characters, longest na
 chars (GitHub's limit is 100). The tool asserts these invariants and fails loudly rather
 than mangling a name.
 
-The hierarchy is preserved as **topics** — one per namespace segment, in path order.
+Every mirror carries the **`gitlab-mirror`** topic, so the repos this action owns can be
+told apart from the org's hand-made ones:
+
+```
+https://github.com/orgs/manjaro-contrib/repositories?q=topic:gitlab-mirror
+```
+
+The hierarchy is preserved as **topics** — one per namespace segment, in path order,
+after the marker.
 Browse a group in the UI:
 
 ```
@@ -89,12 +105,12 @@ The tool therefore funnels **every** anonymous GitLab fetch — `ls-remote` and
 the whole pool rather than just the calling thread. Measured: 150 consecutive digests,
 0 throttled, 164 s.
 
-The practical consequence: the ref-scan phase alone costs roughly **85 minutes** for all
-2039 projects (measured end to end: `pending=2029 empty=10 failed=0`), and that floor
-applies to every run, including ones with nothing to sync. Effective throughput lands near
-25/min rather than the nominal 55 — GitLab's budget refills more slowly than a naive
-reading of the headers suggests. Worker counts are not a tuning knob here; only the
-budget is.
+The practical consequence: a full scan of all 2039 projects took ~85 min end to end
+(measured: `pending=2029 empty=10 failed=0`). Scoping to the 619 live projects cuts that to
+roughly 25 min, and `last_activity_at` skipping removes most of what remains. Effective
+throughput lands near 25/min rather than the nominal 55 — GitLab's budget refills more
+slowly than a naive reading of the headers suggests. Worker counts are not a tuning knob
+here; only the budget is.
 
 ## The `GH_MIRROR_TOKEN` secret
 
@@ -131,15 +147,14 @@ A deferred project does not fail the run's exit code.
 
 ## Bootstrap
 
-The first population creates ~2029 repos, and GitHub's secondary limit is 500
-content-creating requests per hour. Dispatch the workflow manually with `limit: 450`,
-wait an hour, repeat — **five runs** cover the whole set. Afterwards scheduled runs
-create almost nothing and `limit: 0` is correct.
+The first population creates ~619 repos, and GitHub's secondary limit is 500
+content-creating requests per hour. Dispatch the workflow with `limit: 450`, wait an hour,
+then run it again — **two runs** cover the whole set. Afterwards scheduled runs create
+almost nothing and `limit: 0` is correct.
 
-Budget the time: each run pays the ~85 min ref scan before it syncs anything, and the
-clones share the same GitLab budget (~20 min for a 450-repo slice). A bootstrap run still
-lands inside the workflow's 330 min timeout, but the margin is smaller than the repo count
-alone suggests.
+Budget the time: a first run pays a ~25 min ref scan for the 619 in-scope projects, and
+the clones share the same GitLab budget. Later runs skip most of that scan via
+`last_activity_at` and finish in minutes.
 
 ## Running locally
 
