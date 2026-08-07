@@ -214,6 +214,10 @@ def main(argv: list[str] | None = None) -> int:
         else:
             skipped += 1
 
+    # Most-recently-active first, so a capped run syncs what actually moved
+    # rather than whatever sorts early by path.
+    pending.sort(key=lambda w: w.project.last_activity_at, reverse=True)
+
     if args.limit > 0 and len(pending) > args.limit:
         _log(f"limiting to {args.limit} of {len(pending)} projects needing work")
         pending = pending[: args.limit]
