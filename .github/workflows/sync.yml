@@ -13,6 +13,13 @@ on:
       only:
         description: "GitLab path to sync alone, e.g. applications/calamares"
         default: ""
+      max_age_days:
+        description: "skip projects untouched for N days (0 = no age limit)"
+        default: "730"
+      include_stale:
+        description: "also mirror archived and long-dormant projects"
+        type: boolean
+        default: false
 concurrency:
   group: mirror-sync
   cancel-in-progress: false
@@ -35,6 +42,8 @@ jobs:
           uv run python -m sync \
             --limit "${{ inputs.limit || 400 }}" \
             ${{ inputs.only && format('--only {0}', inputs.only) || '' }} \
+            --max-age-days "${{ inputs.max_age_days || 730 }}" \
+            ${{ inputs.include_stale && '--include-stale' || '' }} \
             ${{ inputs.dry_run && '--dry-run' || '' }}
       - name: Commit state
         if: always() && !inputs.dry_run

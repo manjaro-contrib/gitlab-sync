@@ -19,7 +19,18 @@ project that gains its first commit is picked up automatically. Likewise a dorma
 that receives a push re-enters scope on the next run by itself.
 
 Override the cutoff with `--max-age-days N` (`0` disables the age check), or mirror
-everything including archived projects with `--include-stale`.
+everything including archived projects with `--include-stale`. Both are also
+`workflow_dispatch` inputs, so a one-off wider sync needs no code change:
+
+| dispatch input | scope (measured 2026-08-07) |
+| --- | --- |
+| defaults | 619 |
+| `max_age_days: 365` | 447 |
+| `max_age_days: 0` (age check off) | 1464 |
+| `include_stale: true` | 2039 |
+
+The scheduled run always uses the defaults — dispatch inputs are `null` on a `schedule`
+trigger, so the fallbacks in the workflow apply.
 
 Nothing is ever deleted on GitHub. A project that falls out of scope — archived, gone
 dormant, or removed upstream — keeps its mirror as-is.
