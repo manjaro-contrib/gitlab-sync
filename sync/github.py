@@ -15,6 +15,7 @@ ORG = "manjaro-contrib"
 
 MAX_ATTEMPTS = 5
 CREATE_INTERVAL = 1.0
+SECONDARY_LIMIT_DELAY = 60.0
 MAX_DESCRIPTION = 350
 
 # Org automation stamps freshly created manjaro-contrib repos with its own topics
@@ -29,11 +30,16 @@ class GitHubError(RuntimeError):
     pass
 
 
+class SecondaryLimit(GitHubError):
+    """GitHub is refusing new content creation for this token, for now."""
+
+
 class GitHub:
     def __init__(self, token: str):
         self._token = token
         self._create_lock = threading.Lock()
         self._last_create = 0.0
+        self._secondary_blocked = False
 
     def _request(self, method: str, path: str, body: dict | None = None,
                  ok_404: bool = False) -> dict | None:
@@ -52,20 +58,23 @@ class GitHub:
             except urllib.error.HTTPError as e:
                 if e.code == 404 and ok_404:
                     return None
+                detail = e.read().decode(errors="replace")
                 if e.code in (403, 429) and attempt < MAX_ATTEMPTS:
-                    delay = _throttle_delay(e)
+                    delay = _throttle_delay(e, detail)
                     if delay is not None:
+                        if "secondary rate limit" in detail.lower():
+                            self._secondary_blocked = True
                         time.sleep(delay)
                         continue
-                raise GitHubError(
-                    f"{method} {path} -> {e.code}: {e.read().decode(errors='replace')[:500]}"
-                ) from e
+                raise GitHubError(f"{method} {path} -> {e.code}: {detail[:500]}") from e
         raise GitHubError(f"{method} {path}: giving up after {MAX_ATTEMPTS} attempts")
 
     def get_repo(self, name: str) -> dict | None:
         return self._request("GET", f"/repos/{ORG}/{name}", ok_404=True)
 
     def create_repo(self, p: Project) -> dict:
+        if self._secondary_blocked:
+            raise SecondaryLimit("secondary rate limit reached earlier this run")
         body = {
             "name": p.name,
             "description": p.description[:MAX_DESCRIPTION],
@@ -115,13 +124,17 @@ class GitHub:
                 return
 
 
-def _throttle_delay(e: urllib.error.HTTPError) -> float | None:
+def _throttle_delay(e: urllib.error.HTTPError, body: str = "") -> float | None:
     retry_after = e.headers.get("Retry-After")
     if retry_after:
         try:
             return float(retry_after)
         except ValueError:
             return None
+    # Secondary-limit blocks frequently carry neither Retry-After nor an
+    # exhausted primary quota; without this they look like hard failures.
+    if "secondary rate limit" in body.lower():
+        return SECONDARY_LIMIT_DELAY
     if e.headers.get("x-ratelimit-remaining") == "0":
         reset = e.headers.get("x-ratelimit-reset")
         if reset:

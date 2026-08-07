@@ -14,7 +14,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 
 from . import state as state_mod
-from .github import ORG, GitHub
+from .github import ORG, GitHub, SecondaryLimit
 from .gitlab import Project, list_projects
 
 # Throughput is bounded by GitLab's 55/min git rate budget (see state.gitlab_rate),
@@ -239,6 +239,7 @@ def main(argv: list[str] | None = None) -> int:
     syncer = Syncer(gh, token, state)
     synced = 0
     failures = list(failed_paths)
+    blocked: list[str] = []
     progress = Progress("syncing", len(pending)) if pending else None
     with ThreadPoolExecutor(max_workers=SYNC_WORKERS) as pool:
         futures = {pool.submit(syncer.sync, w): w for w in pending}
@@ -247,6 +248,8 @@ def main(argv: list[str] | None = None) -> int:
             try:
                 fut.result()
                 synced += 1
+            except SecondaryLimit:
+                blocked.append(work.project.path)
             except Exception as e:
                 failures.append(work.project.path)
                 print(f"failed {work.project.path}: {_brief(e)}",
@@ -255,9 +258,13 @@ def main(argv: list[str] | None = None) -> int:
                 progress.tick(f" failed={len(failures)}" if failures else "")
     syncer.flush()
 
+    if blocked:
+        _log(f"deferred {len(blocked)} projects: GitHub secondary rate limit on "
+             f"repo creation (500/h). They are retried next run.")
+
     topics_only = sum(1 for w in pending if not w.git and w.topics)
     archived_changed = sum(1 for w in pending if w.archive)
     print(f"synced={synced} topics_only={topics_only} "
           f"archived_changed={archived_changed} skipped={skipped} "
-          f"empty={empty} failed={len(failures)}")
+          f"empty={empty} deferred={len(blocked)} failed={len(failures)}")
     return 1 if failures else 0

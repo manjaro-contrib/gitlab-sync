@@ -37,5 +37,13 @@ jobs:
           git config user.name "mirror-sync"
           git config user.email "mirror-sync@users.noreply.github.com"
           git add state/refs.json
-          git diff --cached --quiet || git commit -m "state: sync $(date -u +%FT%TZ)"
-          git push
+          git diff --cached --quiet && exit 0
+          git commit -m "state: sync $(date -u +%FT%TZ)"
+          # A run that took hours can race a commit that landed meanwhile.
+          # The sync work already succeeded, so retry rather than fail it.
+          for i in 1 2 3 4 5; do
+            git push && exit 0
+            git pull --rebase --autostash origin main || exit 1
+          done
+          echo "::error::could not push state after 5 attempts"
+          exit 1

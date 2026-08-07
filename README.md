@@ -117,6 +117,18 @@ Rotate the token at <https://github.com/settings/personal-access-tokens> and re-
 gh secret set GH_MIRROR_TOKEN --repo manjaro-contrib/gitlab-sync
 ```
 
+## GitHub's creation ceiling
+
+Repo creation is bound by GitHub's secondary rate limit of **500 content-creating requests
+per hour**. A run that tries to create more than that gets `You have exceeded a secondary
+rate limit`, which arrives with neither `Retry-After` nor an exhausted primary quota — so
+it looks like a hard error unless specifically recognised.
+
+The client detects it, backs off, and then stops attempting further creations for the rest
+of the run. Those projects are reported as `deferred`, not `failed`, and the next run picks
+them up: partial progress is already recorded in `state/refs.json`, so nothing is redone.
+A deferred project does not fail the run's exit code.
+
 ## Bootstrap
 
 The first population creates ~2029 repos, and GitHub's secondary limit is 500
