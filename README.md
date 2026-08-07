@@ -233,9 +233,19 @@ synced=N topics_only=N archived_changed=N skipped=N empty=N failed=N
 
 ## Schedule
 
-Hourly (`cron: "17 * * * *"`). A full run measures 24-32 min — most of the 619 projects
-skip their ref scan via `last_activity_at` — so an hourly cadence keeps mirrors close to
-upstream without runs overlapping.
+Hourly, alternating scope:
+
+| hours | cron | scope |
+| --- | --- | --- |
+| odd | `17 1-23/2 * * *` | live only — 619 projects |
+| even | `17 0-22/2 * * *` | `--include-stale` — all 2039, archived included |
+
+The odd-hour runs keep active packages close to upstream. The even-hour runs pick up
+archived and long-dormant projects, which is also what keeps the **archived bit tracking
+GitLab**: a project archived upstream drops out of the live scope entirely, so without the
+stale pass nothing would ever notice the change.
+
+Between them every hour is covered exactly once — the two crons do not overlap.
 
 `timeout-minutes: 55` is deliberately under the interval: runs are serialized by a
 `concurrency` group, so a job that hung for hours would block every trigger behind it.

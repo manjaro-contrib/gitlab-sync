@@ -1,7 +1,11 @@
 name: sync
 on:
   schedule:
-    - cron: "17 * * * *"
+    # Odd hours: the live scope (619 projects).
+    - cron: "17 1-23/2 * * *"
+    # Even hours: everything, so archived and dormant projects stay mirrored
+    # and their archived bit keeps tracking GitLab.
+    - cron: "17 0-22/2 * * *"
   workflow_dispatch:
     inputs:
       limit:
@@ -25,6 +29,10 @@ concurrency:
   cancel-in-progress: false
 permissions:
   contents: write
+env:
+  # Must match the even-hour cron above.
+  STALE_CRON: "17 0-22/2 * * *"
+
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -44,7 +52,7 @@ jobs:
             --limit "${{ inputs.limit || 450 }}" \
             ${{ inputs.only && format('--only {0}', inputs.only) || '' }} \
             --max-age-days "${{ inputs.max_age_days || 730 }}" \
-            ${{ inputs.include_stale && '--include-stale' || '' }} \
+            ${{ (inputs.include_stale || github.event.schedule == env.STALE_CRON) && '--include-stale' || '' }} \
             ${{ inputs.dry_run && '--dry-run' || '' }}
       - name: Commit state
         if: always() && !inputs.dry_run
