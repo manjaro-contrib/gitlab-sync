@@ -1,0 +1,13 @@
+version: 2
+updates:
+  # Actions are the only moving parts here: the Python side is standard library
+  # only, so there is no pip/uv ecosystem to watch.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        patterns: ["*"]
+    commit-message:
+      prefix: "ci"

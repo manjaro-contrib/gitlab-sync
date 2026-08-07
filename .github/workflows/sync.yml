@@ -30,10 +30,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 55
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v5
-        with:
-          enable-cache: true
+      - uses: actions/checkout@v7
+      # No cache: the project has no dependencies, so there is nothing to
+      # restore and v9 no longer prunes what it stores.
+      - uses: astral-sh/setup-uv@v9
       - run: echo "::add-mask::${{ secrets.GH_MIRROR_TOKEN }}"
       - name: Sync
         env:
