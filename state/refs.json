@@ -2074,6 +2074,17 @@
         "extra"
       ]
     },
+    "packages/extra/bmenu": {
+      "archived": false,
+      "digest": "sha256:87b01ee6600714cdaca527644515946ac0e12183ab7724cdeed3ae444e1d1d10",
+      "last_activity_at": "2024-12-12T23:56:08.977Z",
+      "synced_at": "2026-08-07T13:41:14Z",
+      "topics": [
+        "gitlab-mirror",
+        "packages",
+        "extra"
+      ]
+    },
     "packages/extra/boxbuddy": {
       "archived": false,
       "digest": "sha256:c546104b2d9c5aecb173fc1e2de52c5c3c46bcbeac9fe736826903805e00855e",
