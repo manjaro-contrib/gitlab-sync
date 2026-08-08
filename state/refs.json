@@ -19696,10 +19696,10 @@
       ]
     },
     "packages/extra/vivaldi": {
-      "archived": true,
-      "digest": "sha256:4a7bf8fe0cf1667201b1d67c98f798176127e63e3584c585cc9d5211c5cdf631",
-      "last_activity_at": "2026-05-08T14:17:11.026Z",
-      "synced_at": "2026-08-07T14:43:20Z",
+      "archived": false,
+      "digest": "sha256:ff28e0ff6153154f6fcb3090d2967f39839b6e1b65f47b22f1dad2e3b678d7da",
+      "last_activity_at": "2026-08-08T13:21:07.469Z",
+      "synced_at": "2026-08-08T13:58:09Z",
       "topics": [
         "gitlab-mirror",
         "packages",
