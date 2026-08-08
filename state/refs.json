@@ -23606,6 +23606,16 @@
         "profiles-and-settings"
       ]
     },
+    "profiles-and-settings/manjaro-theme-settings": {
+      "archived": true,
+      "digest": "sha256:c5f11381793906959f395aa9db6ef4303ffaff7f6a6dc263382c3e34fe5bf8c8",
+      "last_activity_at": "2024-06-26T16:54:29.451Z",
+      "synced_at": "2026-08-08T21:23:25Z",
+      "topics": [
+        "gitlab-mirror",
+        "profiles-and-settings"
+      ]
+    },
     "profiles-and-settings/manjaro-xfce-settings": {
       "archived": false,
       "digest": "sha256:14fb140929897f1650df0826fa25d74c3c0ffaf50c84f82449b379de08f73ff5",
