@@ -23996,6 +23996,16 @@
         "web"
       ]
     },
+    "web/ojneo": {
+      "archived": false,
+      "digest": "sha256:8cbfa8ce7c2ca365db0fe4ac7ecc2eba7f11ed46799aac83d0411cf3f30a455a",
+      "last_activity_at": "2024-04-23T10:52:55.837Z",
+      "synced_at": "2026-08-08T21:26:11Z",
+      "topics": [
+        "gitlab-mirror",
+        "web"
+      ]
+    },
     "web/public-inbox": {
       "archived": false,
       "digest": "sha256:5e7b5d84825ce4b10744c93bad06c6374e5477c1fda9d27ebd790f03bb6dc068",
