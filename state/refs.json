@@ -20697,9 +20697,9 @@
     },
     "packages/extra/nvidia-470xx-utils": {
       "archived": false,
-      "digest": "sha256:c736f35412627ed9f94b55713f09bacbc6842fee4ac1d966b362f8753e8d10ef",
-      "last_activity_at": "2026-06-23T14:57:42.389Z",
-      "synced_at": "2026-08-07T10:46:24Z",
+      "digest": "sha256:1bffeb7a1af5a400a4a4be3d40f27657ceeabb91088c7b3220dc52d42a2b63c9",
+      "last_activity_at": "2026-08-08T15:07:43.828Z",
+      "synced_at": "2026-08-08T15:48:05Z",
       "topics": [
         "gitlab-mirror",
         "packages",
