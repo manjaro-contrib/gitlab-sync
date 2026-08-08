@@ -96,13 +96,24 @@ def _group_projects(group: str) -> list[dict]:
         page += 1
 
 
+def clean_description(text: str) -> str:
+    """Flatten a GitLab description into something GitHub accepts.
+
+    GitLab descriptions are multi-line markdown. GitHub rejects any control
+    character in the field with 422 "description control characters are not
+    allowed", which fails repository creation outright. Truncation stays in the
+    GitHub client, next to the limit it enforces.
+    """
+    return " ".join(text.split())
+
+
 def _to_project(raw: dict) -> Project:
     path = raw["path_with_namespace"]
     topics = (MARKER_TOPIC, *path.split("/")[:-1])
     p = Project(
         path=path,
         name=path.replace("/", "-"),
-        description=raw.get("description") or "",
+        description=clean_description(raw.get("description") or ""),
         default_branch=raw.get("default_branch"),
         archived=bool(raw.get("archived")),
         last_activity_at=raw.get("last_activity_at") or "",

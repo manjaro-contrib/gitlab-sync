@@ -134,6 +134,10 @@ class Syncer:
                 state_mod.save(self._state)
                 self._since_flush = 0
 
+    def record_only(self, p: Project, digest: str) -> None:
+        """Mark a project done without having pushed it."""
+        self._record(p, digest)
+
     def flush(self) -> None:
         with self._lock:
             state_mod.save(self._state)
@@ -186,6 +190,18 @@ def _digest_all(projects: list[Project], state: dict, limit: int = 0):
         else:
             exhausted = True
     return digests, failures, scanned, exhausted
+
+
+def is_oversized(e: Exception) -> bool:
+    """True when GitHub refused the push for a file over its 100 MB hard limit.
+
+    Not retryable: the blob is in the history, so every later run would clone
+    the repository again and be refused again.
+    """
+    if not isinstance(e, subprocess.CalledProcessError):
+        return False
+    err = e.stderr or ""
+    return "GH001" in err and "exceeds GitHub's file size limit" in err
 
 
 def _brief(e: Exception) -> str:
@@ -294,6 +310,7 @@ def main(argv: list[str] | None = None) -> int:
     synced = 0
     failures = list(failed_paths)
     blocked: list[str] = []
+    oversized: list[str] = []
     progress = Progress("syncing", len(pending)) if pending else None
     with ThreadPoolExecutor(max_workers=SYNC_WORKERS) as pool:
         futures = {pool.submit(syncer.sync, w): w for w in pending}
@@ -305,9 +322,18 @@ def main(argv: list[str] | None = None) -> int:
             except SecondaryLimit:
                 blocked.append(work.project.path)
             except Exception as e:
-                failures.append(work.project.path)
-                print(f"failed {work.project.path}: {_brief(e)}",
-                      file=sys.stderr, flush=True)
+                if is_oversized(e):
+                    oversized.append(work.project.path)
+                    # Record it: the blob is in the history, so re-cloning it
+                    # every hour only wastes the GitLab budget. A later push
+                    # that rewrites the history changes the digest and retries.
+                    syncer.record_only(work.project, work.digest)
+                    print(f"oversized {work.project.path}: exceeds GitHub's "
+                          f"100 MB file limit, not retryable", flush=True)
+                else:
+                    failures.append(work.project.path)
+                    print(f"failed {work.project.path}: {_brief(e)}",
+                          file=sys.stderr, flush=True)
             if progress:
                 progress.tick(f" failed={len(failures)}" if failures else "")
     syncer.flush()
@@ -320,5 +346,6 @@ def main(argv: list[str] | None = None) -> int:
     archived_changed = sum(1 for w in pending if w.archive)
     print(f"synced={synced} topics_only={topics_only} "
           f"archived_changed={archived_changed} skipped={skipped} "
-          f"empty={empty} deferred={len(blocked)} failed={len(failures)}")
+          f"empty={empty} deferred={len(blocked)} oversized={len(oversized)} "
+          f"failed={len(failures)}")
     return 1 if failures else 0

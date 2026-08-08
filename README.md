@@ -171,6 +171,18 @@ Rotate the token at <https://github.com/settings/personal-access-tokens> and re-
 gh secret set GH_MIRROR_TOKEN --repo manjaro-contrib/gitlab-sync
 ```
 
+## Two things GitHub refuses
+
+**Control characters in the description.** GitLab descriptions are multi-line markdown.
+GitHub answers `422 description control characters are not allowed` and creates no
+repository at all. The description is collapsed to a single line before it is sent.
+
+**Files over 100 MB.** This is a hard limit, and the blob is in the history, so the push
+can never succeed. `web/ojneo` holds a 198 MB `OJ.svg`. Such a project is counted as
+`oversized`, its state is recorded so later runs do not clone it again, and it does not
+fail the run. If upstream rewrites the history, the digest changes and the project is
+tried again.
+
 ## GitHub's creation ceiling
 
 Repo creation is bound by GitHub's secondary rate limit of **500 content-creating requests
