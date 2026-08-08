@@ -7308,9 +7308,9 @@
     },
     "packages/extra/firmware-manager": {
       "archived": false,
-      "digest": "sha256:0cfe5063b8a69f374b8b40e61aa5e7f68704224c56617ae5d25c747073b93ce6",
-      "last_activity_at": "2026-06-04T23:34:43.956Z",
-      "synced_at": "2026-08-07T10:47:45Z",
+      "digest": "sha256:1186c5b7a552d728fecd9f5d08604d5ecea41135139ada2e48321a9fe241b951",
+      "last_activity_at": "2026-08-08T00:27:31.202Z",
+      "synced_at": "2026-08-08T04:31:02Z",
       "topics": [
         "gitlab-mirror",
         "packages",
