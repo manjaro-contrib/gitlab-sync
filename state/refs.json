@@ -2754,6 +2754,18 @@
         "community"
       ]
     },
+    "manjaro-arm/packages/community/linux-rpi4-udl": {
+      "archived": false,
+      "digest": "sha256:8fe2612727fc5591b05d7b4d44f39a1a33745aab662a10d98c86503f35d77e29",
+      "last_activity_at": "2022-10-19T19:27:05.957Z",
+      "synced_at": "2026-08-08T22:49:07Z",
+      "topics": [
+        "gitlab-mirror",
+        "manjaro-arm",
+        "packages",
+        "community"
+      ]
+    },
     "manjaro-arm/packages/community/lomiri-dev/accountsservice-ubuntu": {
       "archived": false,
       "digest": "sha256:920ccc0b313e28721fc1bd92cfa7cccff93aa1605f1b0a1af1ea6156574d3481",
@@ -7632,6 +7644,19 @@
         "plamo-gear"
       ]
     },
+    "manjaro-arm/packages/community/plamo-gear/kongress": {
+      "archived": false,
+      "digest": "sha256:651f080cba5b1b092d16c3ef4b559819b0c8ee4686668752c4b93ad680d5e3ca",
+      "last_activity_at": "2023-04-27T17:53:03.950Z",
+      "synced_at": "2026-08-08T22:49:06Z",
+      "topics": [
+        "gitlab-mirror",
+        "manjaro-arm",
+        "packages",
+        "community",
+        "plamo-gear"
+      ]
+    },
     "manjaro-arm/packages/community/plamo-gear/kpeoplesink-git": {
       "archived": false,
       "digest": "sha256:72ccbde7315793000aa7b8a4bb7aed706b979b52047adebeb44a46ec5d9e5d65",
@@ -8764,6 +8789,18 @@
       "digest": "sha256:12b6bf55fe4b563d40591f0dbeffcef798d829447941c1403d2d953b46354acc",
       "last_activity_at": "2021-10-30T08:54:56.798Z",
       "synced_at": "2026-08-08T13:30:47Z",
+      "topics": [
+        "gitlab-mirror",
+        "manjaro-arm",
+        "packages",
+        "community"
+      ]
+    },
+    "manjaro-arm/packages/community/vivaldi-ffmpeg-codecs": {
+      "archived": false,
+      "digest": "sha256:aeac599839173bd61f35a1f269bb2801362d348150cc0ad71b5df4d8400cc11c",
+      "last_activity_at": "2021-10-31T22:32:06.178Z",
+      "synced_at": "2026-08-08T22:49:19Z",
       "topics": [
         "gitlab-mirror",
         "manjaro-arm",
@@ -12703,6 +12740,17 @@
       "digest": "sha256:9938a6529b649c0f607a12227fd1974d603cfa6142a7b1764b1a576ddf73807e",
       "last_activity_at": "2023-06-22T17:45:31.122Z",
       "synced_at": "2026-08-07T21:29:12Z",
+      "topics": [
+        "gitlab-mirror",
+        "packages",
+        "core"
+      ]
+    },
+    "packages/core/linux4x-firmware": {
+      "archived": true,
+      "digest": "sha256:69693a8f2e2f33183d614e79e8b88a7f4aff23c0fef9958504d00c530879a0c2",
+      "last_activity_at": "2022-02-10T19:04:44.835Z",
+      "synced_at": "2026-08-08T22:49:08Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -23601,6 +23649,16 @@
       "digest": "sha256:5a41cf6c32d2f4669a8ce02fe9e6c2000db87e8e4619ec392cd0e1a8559d1efe",
       "last_activity_at": "2018-11-09T12:54:55.073Z",
       "synced_at": "2026-08-08T15:16:46Z",
+      "topics": [
+        "gitlab-mirror",
+        "profiles-and-settings"
+      ]
+    },
+    "profiles-and-settings/manjaro-ranger-settings": {
+      "archived": false,
+      "digest": "sha256:9f02843c16097c2cb7247b403ce3cfb096fb282ed90817eef6747e88f442ee3b",
+      "last_activity_at": "2024-06-26T16:54:56.912Z",
+      "synced_at": "2026-08-08T22:49:11Z",
       "topics": [
         "gitlab-mirror",
         "profiles-and-settings"
