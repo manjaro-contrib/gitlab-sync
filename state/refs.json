@@ -15069,9 +15069,9 @@
     },
     "packages/extra/heroic-games-launcher": {
       "archived": false,
-      "digest": "sha256:fdefa0df43b3796c9bae1e9efc8b39512a718b2e1ea2dac7cce21e1f892f7771",
-      "last_activity_at": "2026-06-06T14:33:46.550Z",
-      "synced_at": "2026-08-07T10:47:38Z",
+      "digest": "sha256:b105260de1d5b08bd4e6d4b79e0ce99532d74f04c9242ea95c13767b057751fb",
+      "last_activity_at": "2026-08-09T14:26:22.777Z",
+      "synced_at": "2026-08-09T14:55:22Z",
       "topics": [
         "gitlab-mirror",
         "packages",
