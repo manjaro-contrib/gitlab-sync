@@ -56,6 +56,11 @@ class Project:
     def clone_url(self) -> str:
         return f"{GITLAB}/{self.path}.git"
 
+    @property
+    def web_url(self) -> str:
+        """Where the mirror came from, shown as the GitHub homepage."""
+        return f"{GITLAB}/{self.path}"
+
 
 def _get_json(url: str) -> list[dict]:
     """Fetch one API page, retrying transient failures.

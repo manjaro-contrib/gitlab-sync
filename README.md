@@ -35,6 +35,18 @@ trigger, so the fallbacks in the workflow apply.
 Nothing is ever deleted on GitHub. A project that falls out of scope — archived, gone
 dormant, or removed upstream — keeps its mirror as-is.
 
+Every mirror carries its GitLab project page as the repository homepage, so the source is
+one click away from the GitHub page:
+
+```
+github.com/manjaro-contrib/packages-extra-element.io
+  homepage -> gitlab.manjaro.org/packages/extra/element.io
+```
+
+An archived mirror cannot receive it, because GitHub makes archived repositories read-only
+and answers `403 Repository was archived`. Those get it the next time they are unarchived
+for a push.
+
 Mirrors have issues, wikis, projects **and Actions** disabled — they are backups, and
 discussion belongs on GitLab. Actions matters most: upstream repos carry their own
 `.github/workflows`, and GitHub would otherwise schedule them here, running Manjaro's CI

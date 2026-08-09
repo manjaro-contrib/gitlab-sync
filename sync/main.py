@@ -115,8 +115,16 @@ class Syncer:
         if work.git:
             _clone_and_push(p, self._token)
 
+        # One PATCH for every metadata field that drifted. default_branch has
+        # to come after the push, because GitHub rejects a branch that does not
+        # exist yet.
+        changes = {}
         if p.default_branch and p.default_branch != repo.get("default_branch"):
-            self._gh.edit_repo(p.name, default_branch=p.default_branch)
+            changes["default_branch"] = p.default_branch
+        if p.web_url != repo.get("homepage"):
+            changes["homepage"] = p.web_url
+        if changes:
+            self._gh.edit_repo(p.name, **changes)
 
         if work.topics:
             self._gh.set_topics(p.name, list(p.topics))
