@@ -127,7 +127,15 @@ class GitHub:
         return body.get("names", [])
 
     def set_topics(self, name: str, topics: list[str]) -> None:
-        """Set topics and make them stick despite the org's auto-tagging race."""
+        """Set the topics we own, and keep any topic somebody else added.
+
+        The endpoint replaces the whole set, and we compute only the namespace
+        topics. Without this, a rewrite silently deletes markers applied by
+        other tooling, such as the stale-candidate topic.
+        """
+        ours = set(topics)
+        foreign = [t for t in self.get_topics(name) if t not in ours]
+        topics = list(topics) + foreign
         want = sorted(topics)
         for attempt in range(1, TOPIC_CONFIRM_ATTEMPTS + 1):
             self._request("PUT", f"/repos/{ORG}/{name}/topics", {"names": topics})

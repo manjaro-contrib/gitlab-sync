@@ -95,6 +95,10 @@ topics (`arch`, `package`) a second or two after creation, which silently clobbe
 single `PUT`. `set_topics()` therefore re-reads and re-applies until the intended topics
 stick — without that, every newly mirrored repo ends up mistagged.
 
+A topic rewrite keeps any topic this tool did not set. The endpoint replaces the whole
+set, and the tool computes only the namespace topics, so without this a rewrite would
+silently delete markers added by other tooling, such as `stale-candidate`.
+
 What topics do *not* restore: nesting (a repo tagged `packages` + `extra` does not encode
 that `extra` lives inside `packages` — list order is the only hint) and per-group
 permissions or teams.
