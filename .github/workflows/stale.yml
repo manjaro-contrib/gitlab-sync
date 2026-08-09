@@ -1,0 +1,48 @@
+name: stale-check
+
+# Classification runs `makepkg --printsrcinfo`, which sources each PKGBUILD and
+# so executes shell code from 619 source repositories. This workflow is
+# deliberately separate from sync: it never sees GH_MIRROR_TOKEN, so a hostile
+# PKGBUILD has no push credential to steal.
+on:
+  schedule:
+    - cron: "43 5 * * 1"
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: "write the reason topics (off = report only)"
+        type: boolean
+        default: false
+      limit:
+        description: "examine at most N projects (0 = all)"
+        default: "0"
+      min_quiet_days:
+        description: "a candidate must be untouched this long"
+        default: "30"
+
+concurrency:
+  group: stale-check
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v9.0.0
+      - name: Install makepkg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq pacman-package-manager
+      - name: Classify
+        env:
+          # Only set when topics are actually written. A report-only run holds
+          # no credential at all.
+          GH_MIRROR_TOKEN: ${{ inputs.apply && secrets.GH_MIRROR_TOKEN || '' }}
+        run: |
+          uv run python -m sync.stale_main \
+            --limit "${{ inputs.limit || 0 }}" \
+            --min-quiet-days "${{ inputs.min_quiet_days || 30 }}" \
+            ${{ inputs.apply && '--apply' || '' }}

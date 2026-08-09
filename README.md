@@ -247,6 +247,39 @@ Exit code is `1` if any project failed, `0` otherwise. Every run ends with a sum
 synced=N topics_only=N archived_changed=N skipped=N empty=N failed=N
 ```
 
+## Which overlays still ship
+
+`stale-check` compares each mirror's PKGBUILD against the version in the Manjaro stable
+branch, read from [branch compare](https://manjaristas.org/branch_compare). An overlay that
+sits behind stable and that nobody has touched for a month has probably been dropped.
+
+The package name cannot be taken from the repository path. 150 of the 619 mirrors build it
+from shell variables, for example `pkgname="${_linuxprefix}-${_module}"`, so
+`makepkg --printsrcinfo` expands it. Guessing the name instead gave a 20% false positive
+rate in testing.
+
+Each verdict writes its own topic, so the reason is visible in the GitHub UI:
+
+| topic | meaning |
+| --- | --- |
+| *(none)* | the built package matches the repository |
+| `repo-behind-stable` | stable ships a newer version: the candidate |
+| `repo-build-pending` | the repository is newer, a build has not run |
+| `repo-not-in-branches` | in no branch under that name |
+| `repo-no-pkgbuild` | not a packaging repository |
+| `repo-unparseable-pkgbuild` | makepkg could not read it |
+
+Only `repo-behind-stable` plus 30 quiet days counts as a candidate. `repo-build-pending` is
+active work. `repo-not-in-branches` is never a candidate, because a package can disappear
+under one name and ship under another, and hiding a live package is the worse error.
+
+Nothing is archived and nothing is deleted. The topic is a hint for a human.
+
+**The workflow is separate on purpose.** `makepkg --printsrcinfo` sources the PKGBUILD, so
+it executes shell code from every source repository. `stale-check` therefore never receives
+`GH_MIRROR_TOKEN` unless it is writing topics, and asks for `contents: read`. Run it with
+`apply: false` first and read the list.
+
 ## Schedule
 
 Hourly, alternating scope:
