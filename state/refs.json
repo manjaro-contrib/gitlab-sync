@@ -22740,9 +22740,9 @@
     },
     "packages/extra/vibrancy-icons-teal": {
       "archived": false,
-      "digest": "sha256:7fc301be75c3e23e341a0d156c3811712e747a3f53a07dbebcb649fa41608ed1",
-      "last_activity_at": "2024-07-02T17:07:42.251Z",
-      "synced_at": "2026-08-07T19:39:59Z",
+      "digest": "sha256:c24cbed846b500ed7d6d25622d2a9785670fa6d1ea2d121a81c20e317bb1427b",
+      "last_activity_at": "2026-08-10T23:09:53.742Z",
+      "synced_at": "2026-08-10T23:56:16Z",
       "topics": [
         "gitlab-mirror",
         "packages",
