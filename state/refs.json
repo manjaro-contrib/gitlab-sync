@@ -21321,9 +21321,9 @@
     },
     "packages/extra/penguins-eggs": {
       "archived": false,
-      "digest": "sha256:062edf25afedc9c2fb31d5451d88d06ce9492f3e5bc560945a56e1ef5063fb11",
-      "last_activity_at": "2026-07-29T21:03:14.746Z",
-      "synced_at": "2026-08-07T09:26:28Z",
+      "digest": "sha256:76810e76c24e2cd1bf825a2137e37867939f3860811bbd5a0bf32151cb3c1f66",
+      "last_activity_at": "2026-08-10T16:03:37.782Z",
+      "synced_at": "2026-08-10T16:11:19Z",
       "topics": [
         "gitlab-mirror",
         "packages",
