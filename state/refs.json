@@ -12594,9 +12594,9 @@
     },
     "packages/core/linux-lts-meta": {
       "archived": false,
-      "digest": "sha256:b02a769571803c3f524d601e8353ca8b2678ea8c236c660033fb5dad5dc299b9",
-      "last_activity_at": "2026-05-13T06:37:35.611Z",
-      "synced_at": "2026-08-07T10:49:29Z",
+      "digest": "sha256:71601bab83d465630b2259722817ca42be061826f68b332adefd2adf3aee0954",
+      "last_activity_at": "2026-08-10T19:26:59.964Z",
+      "synced_at": "2026-08-10T20:06:12Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -12605,9 +12605,9 @@
     },
     "packages/core/linux-meta": {
       "archived": false,
-      "digest": "sha256:ffd069ffc9aa741dee965dc1a4591e550f368a5ed51144fc34ea13fa182ec8db",
-      "last_activity_at": "2026-07-07T13:56:30.296Z",
-      "synced_at": "2026-08-07T10:44:16Z",
+      "digest": "sha256:2b8ea36edaa3fbecf54e042ad2209cc24dc299af0dfc118db226b91a58d574d7",
+      "last_activity_at": "2026-08-10T19:27:45.925Z",
+      "synced_at": "2026-08-10T20:06:12Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -13067,9 +13067,9 @@
     },
     "packages/core/linux612-rt": {
       "archived": false,
-      "digest": "sha256:e09b249a1c1899f15394666c5c46c92831c44e7a60ea8972794115aa81725c59",
-      "last_activity_at": "2026-07-26T13:34:29.875Z",
-      "synced_at": "2026-08-07T10:41:17Z",
+      "digest": "sha256:c5829726989e1e7d7b179d3e3332880b2117cf75fc60746849cb34c15d5af4c1",
+      "last_activity_at": "2026-08-10T19:25:33.960Z",
+      "synced_at": "2026-08-10T20:06:24Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -13309,9 +13309,9 @@
     },
     "packages/core/linux66-rt": {
       "archived": false,
-      "digest": "sha256:c02969e2bddd7fbca780b67407daf72fcecf949cd9111932aa63aec8eb128eaf",
-      "last_activity_at": "2026-06-29T16:29:48.111Z",
-      "synced_at": "2026-08-07T10:44:54Z",
+      "digest": "sha256:c41ab82885ca76be8164f41cac29dbea03ce1423ecbb068556c7fb522abfded1",
+      "last_activity_at": "2026-08-10T19:22:20.880Z",
+      "synced_at": "2026-08-10T20:06:28Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -13430,9 +13430,9 @@
     },
     "packages/core/manjaro-keyring": {
       "archived": false,
-      "digest": "sha256:c011085dd42bc2b9513e968c395b0d85cddfaf7774e1e4600a0338e02d5bed69",
-      "last_activity_at": "2026-03-05T00:09:50.254Z",
-      "synced_at": "2026-08-07T11:32:52Z",
+      "digest": "sha256:dd390e2a6cd28180e56337c9263b824b598ca7974eb1e2fa692827f5b03e5cfe",
+      "last_activity_at": "2026-08-10T19:29:04.648Z",
+      "synced_at": "2026-08-10T20:06:04Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -13496,9 +13496,9 @@
     },
     "packages/core/pacman-mirrors": {
       "archived": false,
-      "digest": "sha256:a8bee62ea0bba7bbe0522774a6a13aaaa202c545692e3d6ce4ea4376bf6fa8db",
-      "last_activity_at": "2026-01-10T20:16:40.913Z",
-      "synced_at": "2026-08-07T11:35:50Z",
+      "digest": "sha256:98b5d5c37afdcf3955c01bf40c008b1364084eed87635ac59e734cd0756166cc",
+      "last_activity_at": "2026-08-10T19:32:27.191Z",
+      "synced_at": "2026-08-10T20:06:14Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -13584,9 +13584,9 @@
     },
     "packages/extra/adapta-manjaro-themes": {
       "archived": false,
-      "digest": "sha256:554d25ec042194d83c711239d5cd80d9f1ba3f3bbcc63ccd076123df15513722",
-      "last_activity_at": "2026-01-26T23:19:10.404Z",
-      "synced_at": "2026-08-07T11:34:46Z",
+      "digest": "sha256:1879b8169d4f6ef8e3cd149b2b5186c2adaa844b4bfb6cff63e59e6cf2aa1de3",
+      "last_activity_at": "2026-08-10T19:47:32.236Z",
+      "synced_at": "2026-08-10T20:05:40Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -13969,9 +13969,9 @@
     },
     "packages/extra/boxit": {
       "archived": false,
-      "digest": "sha256:4189b5f3d2abd32537f13c3749bd6afa5455381e48e297f8e2b2904101d5bf7d",
-      "last_activity_at": "2025-11-10T14:41:08.257Z",
-      "synced_at": "2026-08-07T11:37:16Z",
+      "digest": "sha256:2796cbd1f1a4c4947d2104efdd5bbbddc730c0b87109202cdbce00bc05aa1df5",
+      "last_activity_at": "2026-08-10T19:48:39.138Z",
+      "synced_at": "2026-08-10T20:05:29Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -14255,9 +14255,9 @@
     },
     "packages/extra/conky-i3": {
       "archived": false,
-      "digest": "sha256:a26841b0357188456348cd63746796ea780216ec502e11efc29756dd74cf5a0e",
-      "last_activity_at": "2025-03-23T17:48:07.699Z",
-      "synced_at": "2026-08-07T13:27:50Z",
+      "digest": "sha256:7816bc8f70db54feef5c9e45254a029c502aa552e4caaad32d2f7a8a4588bfcf",
+      "last_activity_at": "2026-08-10T19:49:24.497Z",
+      "synced_at": "2026-08-10T20:05:28Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -14310,9 +14310,9 @@
     },
     "packages/extra/dmenu-manjaro": {
       "archived": false,
-      "digest": "sha256:de6790726356bcb2f434b2eb57263188e7981e808841fa7343c4be953568ed81",
-      "last_activity_at": "2025-08-23T00:01:52.758Z",
-      "synced_at": "2026-08-07T11:55:58Z",
+      "digest": "sha256:8994e13a033f7eed6fc698aeb56c24ca3bb0e2b0e381e6ebd2fc83d28d580840",
+      "last_activity_at": "2026-08-10T19:51:27.480Z",
+      "synced_at": "2026-08-10T20:05:32Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -15179,9 +15179,9 @@
     },
     "packages/extra/i3-help": {
       "archived": false,
-      "digest": "sha256:01a2cc978ba67e35bef162e7274dba59b06a312422695b1e608de40f6eb7684e",
-      "last_activity_at": "2024-06-14T16:14:20.004Z",
-      "synced_at": "2026-08-07T19:40:43Z",
+      "digest": "sha256:70fe5d16e71af5af581053f8a5ef6a6891a080e8bef0581bb7f3a1e6d0676845",
+      "last_activity_at": "2026-08-10T19:53:15.598Z",
+      "synced_at": "2026-08-10T20:05:14Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -15190,9 +15190,9 @@
     },
     "packages/extra/i3-scripts": {
       "archived": false,
-      "digest": "sha256:eec4833a25a71368f2a08c7e133c305f6862f120e1dbca72c71f1c1d521ceb07",
-      "last_activity_at": "2025-03-23T22:56:16.788Z",
-      "synced_at": "2026-08-07T13:27:35Z",
+      "digest": "sha256:2a2cb1eead0d9054756999b847fc2a1ca1914718c9f99ed309c1d1bc982c348a",
+      "last_activity_at": "2026-08-10T19:54:17.155Z",
+      "synced_at": "2026-08-10T20:05:18Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -15201,9 +15201,9 @@
     },
     "packages/extra/i3-scrot": {
       "archived": false,
-      "digest": "sha256:bd4e805444ef9ea6c723a189a02349bd914c1f080fb35ba714a62cb2f5ab734a",
-      "last_activity_at": "2025-03-23T20:37:19.910Z",
-      "synced_at": "2026-08-07T13:27:43Z",
+      "digest": "sha256:924188a24817bd12475df537bdaf89c0e893146947d241d2421da16693d783ec",
+      "last_activity_at": "2026-08-10T19:54:52.623Z",
+      "synced_at": "2026-08-10T20:05:02Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -15212,9 +15212,9 @@
     },
     "packages/extra/i3exit": {
       "archived": false,
-      "digest": "sha256:461ef49eda36aa4671972d211d95e3ba3e8f7dbff253763a98c41ab791e91eb0",
-      "last_activity_at": "2025-03-23T20:45:56.105Z",
-      "synced_at": "2026-08-07T13:27:42Z",
+      "digest": "sha256:5125edb76dd6c833444254f13555929c0be642b00ebf39236825951fdd4c8026",
+      "last_activity_at": "2026-08-10T19:52:26.856Z",
+      "synced_at": "2026-08-10T20:05:19Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -15366,9 +15366,9 @@
     },
     "packages/extra/kvantum-manjaro": {
       "archived": false,
-      "digest": "sha256:f3f93c9d3e2864836cecdc66cfd36144248ff710650bcf805dd341137f5e2b37",
-      "last_activity_at": "2024-12-12T23:58:43.955Z",
-      "synced_at": "2026-08-07T13:29:26Z",
+      "digest": "sha256:57e2e79e7840cf3ea4911a68aee5af903d33058b6b4168d0fe2baa211100654e",
+      "last_activity_at": "2026-08-10T19:55:52.935Z",
+      "synced_at": "2026-08-10T20:05:01Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -19836,9 +19836,9 @@
     },
     "packages/extra/manjaro-architect": {
       "archived": false,
-      "digest": "sha256:98d32db92f40c7137052a0b6ad9137bbf2cc3839011be4f700f3ea7c8d950a0a",
-      "last_activity_at": "2026-06-24T16:44:09.155Z",
-      "synced_at": "2026-08-07T10:45:58Z",
+      "digest": "sha256:d497fd4e2f6865b91315eec3e549120ac1ea0c7cc65fb3ee9e9fd9fb54f98d83",
+      "last_activity_at": "2026-08-10T19:56:45.019Z",
+      "synced_at": "2026-08-10T20:05:00Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -20089,9 +20089,9 @@
     },
     "packages/extra/manjaro-icons": {
       "archived": false,
-      "digest": "sha256:4c6851860cf5f5a3d4286ae48ac855c4818c9e3da831c431504d97de4f2c420f",
-      "last_activity_at": "2024-05-02T17:53:58.874Z",
-      "synced_at": "2026-08-07T19:44:56Z",
+      "digest": "sha256:ed5d815aff7b0426df729719cf8b308334a7cca4c33fe568a7d9cc373736776a",
+      "last_activity_at": "2026-08-10T19:57:59.568Z",
+      "synced_at": "2026-08-10T20:05:13Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -23114,9 +23114,9 @@
     },
     "packages/multilib/crossover": {
       "archived": false,
-      "digest": "sha256:39175a67e7cd6b1cb45cafeea7873f4fa26f40f8d369b69cec8af8e9ceaf0811",
-      "last_activity_at": "2026-07-28T20:37:52.341Z",
-      "synced_at": "2026-08-07T10:40:39Z",
+      "digest": "sha256:7e49c3d259f364df066a8a46a3e5c465e18c9eb10162f548b521fb8f7ae7d96d",
+      "last_activity_at": "2026-08-10T19:38:22.223Z",
+      "synced_at": "2026-08-10T20:05:57Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -23125,9 +23125,9 @@
     },
     "packages/multilib/crossover-extras": {
       "archived": false,
-      "digest": "sha256:b96a0c9fd442459341d68ab133183cc6e82b4951ee333f012fe5b322ee140476",
-      "last_activity_at": "2026-04-05T20:19:42.162Z",
-      "synced_at": "2026-08-07T11:32:05Z",
+      "digest": "sha256:c07e034b54bbb697a9d4928484dbef52a72a3293e255936b9c4dac9c14882f9e",
+      "last_activity_at": "2026-08-10T19:35:08.145Z",
+      "synced_at": "2026-08-10T20:06:00Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -23334,9 +23334,9 @@
     },
     "packages/multilib/lib32-nvidia-390xx-utils": {
       "archived": false,
-      "digest": "sha256:dbe3a3ea033d36cd6fb28697d9579a6da8407440385ae545b1dbc6ac05c8d5c7",
-      "last_activity_at": "2023-02-25T17:18:44.930Z",
-      "synced_at": "2026-08-07T23:22:10Z",
+      "digest": "sha256:602d42915854199a71b52fa6723f353c0635a23a3de1f5752a542829f490b899",
+      "last_activity_at": "2026-08-10T19:43:39.169Z",
+      "synced_at": "2026-08-10T20:05:51Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -23411,9 +23411,9 @@
     },
     "packages/multilib/lib32-nvidia-470xx-utils": {
       "archived": false,
-      "digest": "sha256:202b8f2f410457273707a09a91b835dc5172446bf6a6ae2a1b7ac4ddf8c9a062",
-      "last_activity_at": "2024-06-05T18:02:01.775Z",
-      "synced_at": "2026-08-07T19:41:35Z",
+      "digest": "sha256:837a54e4460659c8e77709af1b105f5f1f9b1b7ab9fabbd81f752572c17ee45f",
+      "last_activity_at": "2026-08-10T19:44:18.104Z",
+      "synced_at": "2026-08-10T20:05:46Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -23422,9 +23422,9 @@
     },
     "packages/multilib/lib32-nvidia-580xx-utils": {
       "archived": false,
-      "digest": "sha256:bb0bb295d51c1b91a272958d3457385be9b3894431479b60c118275eb1a22d15",
-      "last_activity_at": "2026-08-03T22:53:50.225Z",
-      "synced_at": "2026-08-07T09:23:31Z",
+      "digest": "sha256:ff0e675736eacf3a91c17057fd0a210b673f52c48989bdb721632850b9715d21",
+      "last_activity_at": "2026-08-10T19:44:53.952Z",
+      "synced_at": "2026-08-10T20:05:49Z",
       "topics": [
         "gitlab-mirror",
         "packages",
