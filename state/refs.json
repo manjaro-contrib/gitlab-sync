@@ -13815,9 +13815,9 @@
     },
     "packages/extra/artwork-manjaro-cinnamon": {
       "archived": false,
-      "digest": "sha256:73e168d5993c4d7f28845018d5d95866fc4ac663c9b2c7c665e9c40601bb63bf",
-      "last_activity_at": "2024-07-03T20:36:17.786Z",
-      "synced_at": "2026-08-07T19:39:38Z",
+      "digest": "sha256:4afbc4a1a12deb0598cf33616b36409e783fb573b0d50e1ec967f17a86b7f506",
+      "last_activity_at": "2026-08-10T20:57:49.943Z",
+      "synced_at": "2026-08-10T21:06:40Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -14002,9 +14002,9 @@
     },
     "packages/extra/breeze-cursors5": {
       "archived": false,
-      "digest": "sha256:4462318695210c27309ad51065f7d2e2828e2ec1206f14bd0ffc3d223141dbaf",
-      "last_activity_at": "2026-02-25T22:07:56.784Z",
-      "synced_at": "2026-08-07T11:34:05Z",
+      "digest": "sha256:cc90984747ef900228c426a16b6c937d39b699b0d6b1a836f8e0f0b86b62abf1",
+      "last_activity_at": "2026-08-10T20:59:20.529Z",
+      "synced_at": "2026-08-10T21:06:20Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -14222,9 +14222,9 @@
     },
     "packages/extra/clipit": {
       "archived": false,
-      "digest": "sha256:79c03650bef2e83872dd9cd39207d301fa0d714615d15e60dde2918a4c1b8758",
-      "last_activity_at": "2025-01-29T16:36:24.840Z",
-      "synced_at": "2026-08-07T13:28:26Z",
+      "digest": "sha256:e00fd95b1d7dc2f686b7f210b96311732c32bc1fddff6a2a02618fe34961fc69",
+      "last_activity_at": "2026-08-10T21:02:54.468Z",
+      "synced_at": "2026-08-10T21:06:10Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -14992,9 +14992,9 @@
     },
     "packages/extra/greybird-gtk-theme": {
       "archived": false,
-      "digest": "sha256:d8206c039afca5d9eafaf63d2226989fffb290fc629862ea986f4e454af07c58",
-      "last_activity_at": "2026-01-05T17:15:42.171Z",
-      "synced_at": "2026-08-07T11:36:09Z",
+      "digest": "sha256:a2828dec9f98b056d28c0c7b850ee533f9bb8ec1a8b2a32a8ab1ed76cbc8e510",
+      "last_activity_at": "2026-08-10T21:03:28.521Z",
+      "synced_at": "2026-08-10T21:06:40Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -15036,9 +15036,9 @@
     },
     "packages/extra/gtksourceview-pkgbuild": {
       "archived": false,
-      "digest": "sha256:7570f2a6639036ca9c0d5c0e50b473c3117f99d903bc076a95c721f82efcc611",
-      "last_activity_at": "2024-12-12T23:58:23.726Z",
-      "synced_at": "2026-08-07T13:29:36Z",
+      "digest": "sha256:9d52ee821a9b7e2fdf4a2cf12e7191eac1b67893ffa7badc91b6dbf6c7ee33fa",
+      "last_activity_at": "2026-08-10T21:04:40.368Z",
+      "synced_at": "2026-08-10T21:06:19Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -20122,9 +20122,9 @@
     },
     "packages/extra/manjaro-kde-settings": {
       "archived": false,
-      "digest": "sha256:b35f543be3109916dc7a37c264946c7224becd6720df1bc45fe5537d786bc764",
-      "last_activity_at": "2024-05-01T21:10:52.623Z",
-      "synced_at": "2026-08-07T19:45:23Z",
+      "digest": "sha256:f4c56adb03b86f0908521921f5f189b0f9365595170b146534bb8a33aec74f34",
+      "last_activity_at": "2026-08-10T20:08:21.232Z",
+      "synced_at": "2026-08-10T21:06:54Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -20254,9 +20254,9 @@
     },
     "packages/extra/manjaro-tools": {
       "archived": false,
-      "digest": "sha256:7ce8a2dc444973ee4a0e4da47e9e44058355b5cf8c43e48fdee7c49bb3764a05",
-      "last_activity_at": "2021-01-30T10:25:21.524Z",
-      "synced_at": "2026-08-08T13:36:54Z",
+      "digest": "sha256:7ad488c8749c708211eda0306a177222731defd460f0478f680bd19e8081fb4b",
+      "last_activity_at": "2026-08-10T20:12:54.644Z",
+      "synced_at": "2026-08-10T21:07:10Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -20265,9 +20265,9 @@
     },
     "packages/extra/manjaro-tools-git": {
       "archived": false,
-      "digest": "sha256:6f1da1fcaa5869dabf0266d84ad1c219ffd879d9d1717912aa7cfebaff5ccce5",
-      "last_activity_at": "2026-07-22T08:11:46.852Z",
-      "synced_at": "2026-08-07T10:42:34Z",
+      "digest": "sha256:a0cd3b3faa7c691e742196fd7ad2d2d7e96ad6fcfabe4157b763bc551b49ef58",
+      "last_activity_at": "2026-08-10T20:11:38.410Z",
+      "synced_at": "2026-08-10T21:07:11Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -22608,9 +22608,9 @@
     },
     "packages/extra/ttf-comfortaa": {
       "archived": false,
-      "digest": "sha256:0728ffa124ec4be1387bee08c900b1848b4b3cc6b40f088f1146fb701a48caa5",
-      "last_activity_at": "2024-12-13T00:03:45.941Z",
-      "synced_at": "2026-08-07T13:29:09Z",
+      "digest": "sha256:59340e5b789239679adfb6f0f1310941625ae3e8a8765dc781a4658a0cd3fa54",
+      "last_activity_at": "2026-08-10T20:26:46.111Z",
+      "synced_at": "2026-08-10T21:06:46Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -22872,9 +22872,9 @@
     },
     "packages/extra/wmutils": {
       "archived": false,
-      "digest": "sha256:4e7ad65242d236a744af7e8782366b63d163729f1a1122163c0fc101183f90c3",
-      "last_activity_at": "2024-12-13T00:04:28.962Z",
-      "synced_at": "2026-08-07T13:28:59Z",
+      "digest": "sha256:7ce50e74ee3d4443904d93cde4a5c8d0f65a6e3a1112c065f97ccaabab66cca8",
+      "last_activity_at": "2026-08-10T20:52:19.362Z",
+      "synced_at": "2026-08-10T21:07:00Z",
       "topics": [
         "gitlab-mirror",
         "packages",
