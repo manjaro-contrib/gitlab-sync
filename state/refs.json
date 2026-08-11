@@ -24026,9 +24026,9 @@
     },
     "web/manjaro-web-repo": {
       "archived": false,
-      "digest": "sha256:bdde6ce0da2471374a752e8a3380f15b62b5c47a58bf6e804f47bb9c5bafeebf",
-      "last_activity_at": "2026-08-10T07:23:56.666Z",
-      "synced_at": "2026-08-10T08:07:46Z",
+      "digest": "sha256:55f089d4eec72305ecd36870349ca86b2f81744bbe66a2d5656c153eaf8a3530",
+      "last_activity_at": "2026-08-11T04:51:34.049Z",
+      "synced_at": "2026-08-11T05:33:01Z",
       "topics": [
         "gitlab-mirror",
         "web"
