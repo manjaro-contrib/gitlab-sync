@@ -4021,9 +4021,9 @@
     },
     "packages/extra/gnome-shell-extension-gtk4-desktop-icons-ng": {
       "archived": false,
-      "digest": "sha256:30f7bee738f6cb9a703a222a83e8812df48429e578b49cfb6680c2dd09896203",
-      "last_activity_at": "2026-08-06T20:28:51.857Z",
-      "synced_at": "2026-08-07T09:19:17Z",
+      "digest": "sha256:e2946a754f95c6d06e211b5cac06eedebaf049fc32e47b943e7cd2655c4996e3",
+      "last_activity_at": "2026-08-11T17:55:04.640Z",
+      "synced_at": "2026-08-11T18:08:17Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -11780,9 +11780,9 @@
     },
     "packages/extra/tuxedo-control-center": {
       "archived": false,
-      "digest": "sha256:4ecb482441d37e62a704a83e6a3900fcb7e066f0ddb4f8cd8c71199d4d139d34",
-      "last_activity_at": "2026-08-04T16:53:13.136Z",
-      "synced_at": "2026-08-07T09:19:33Z",
+      "digest": "sha256:59bd6ed5c758873f35c6a91ac2128fadda67b9f55ff85bc16ce18849054d88c2",
+      "last_activity_at": "2026-08-11T17:52:44.437Z",
+      "synced_at": "2026-08-11T18:08:16Z",
       "topics": [
         "gitlab-mirror",
         "packages",
