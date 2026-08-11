@@ -13,11 +13,11 @@ from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 
 GITLAB = "https://gitlab.manjaro.org"
+# manjaro-arm is deliberately absent: ARM packages are not mirrored.
 GROUPS = [
     "applications",
     "artwork",
     "documentation",
-    "manjaro-arm",
     "packages",
     "profiles-and-settings",
     "release-plan",

@@ -113,10 +113,10 @@ def classify(project: Project) -> Result:
     if info is None:
         return Result(project, Verdict.UNPARSEABLE)
 
-    arm = project.path.startswith("manjaro-arm/")
+    # Only x64 is mirrored, so the ARM view of branch compare is never queried.
     stable: dict[str, str] = {}
     for name in info.names:
-        found = branch_compare.versions(name, arm=arm)
+        found = branch_compare.versions(name)
         if found.get("stable"):
             stable[name] = found["stable"]
 

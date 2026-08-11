@@ -5,14 +5,15 @@ into the [`manjaro-contrib`](https://github.com/manjaro-contrib) GitHub organiza
 
 ## Scope
 
-**619** of GitLab's 2039 projects are mirrored — the ones that are actually alive.
+**518** of GitLab's 1164 x64 projects are mirrored — the ones that are actually alive.
 Excluded:
 
 | excluded | count | why |
 | --- | --- | --- |
-| archived upstream | 575 | nobody maintains them |
-| untouched > 2 years | 845 | dormant; costs creation quota and scan time the live packages need |
-| empty | 10 | advertise no refs, so a push fails and the mirror is noise |
+| the whole `manjaro-arm` group | 875 | ARM packages are not mirrored |
+| archived upstream | — | nobody maintains them |
+| untouched > 2 years | — | dormant; costs creation quota and scan time the live packages need |
+| empty | — | advertise no refs, so a push fails and the mirror is noise |
 
 Emptiness is detected per run by ref digest, not by GitLab's `empty_repo` flag, so a
 project that gains its first commit is picked up automatically. Likewise a dormant project
@@ -24,10 +25,10 @@ everything including archived projects with `--include-stale`. Both are also
 
 | dispatch input | scope (measured 2026-08-07) |
 | --- | --- |
-| defaults | 619 |
+| defaults | 518 |
 | `max_age_days: 365` | 447 |
 | `max_age_days: 0` (age check off) | 1464 |
-| `include_stale: true` | 2039 |
+| `include_stale: true` | 1164 |
 
 The scheduled run always uses the defaults — dispatch inputs are `null` on a `schedule`
 trigger, so the fallbacks in the workflow apply.
@@ -128,7 +129,7 @@ calls and no clone.
 GitLab bumps `last_activity_at` on push, and it is already present in the enumeration
 response. If it has not moved since the last *fully successful* sync, the refs cannot have
 changed, so the `ls-remote` is skipped outright. Most Manjaro projects are dormant, so a
-steady-state run scans a small fraction of the 2039 and finishes in minutes rather than
+steady-state run scans a small fraction of the 1164 and finishes in minutes rather than
 the ~85 min a full scan costs.
 
 The skip is deliberately conservative — it only applies when the stored topics and
@@ -143,7 +144,7 @@ projects are found needing work — there is no point paying ~1.7 s per `ls-remo
 projects the run cannot get to anyway. Measured: a `--limit 5` run scanned **5 of 310**
 instead of all 310.
 
-This makes the hourly schedule cheap even while a backlog drains: the run finds its 450
+This makes the hourly schedule cheap even while a backlog drains: the run finds its limit
 and stops, rather than scanning every project first.
 
 ### GitLab's rate budget sets the floor
@@ -159,8 +160,8 @@ The tool therefore funnels **every** anonymous GitLab fetch — `ls-remote` and
 the whole pool rather than just the calling thread. Measured: 150 consecutive digests,
 0 throttled, 164 s.
 
-The practical consequence: a full scan of all 2039 projects took ~85 min end to end
-(measured: `pending=2029 empty=10 failed=0`). Scoping to the 619 live projects cuts that to
+The practical consequence: a full scan of all 2039 projects took ~85 min end to end when
+ARM was still included. Scoping to the 518 live x64 projects cuts that sharply, and
 roughly 25 min, and `last_activity_at` skipping removes most of what remains. Effective
 throughput lands near 25/min rather than the nominal 55 — GitLab's budget refills more
 slowly than a naive reading of the headers suggests. Worker counts are not a tuning knob
@@ -214,7 +215,7 @@ A deferred project does not fail the run's exit code.
 ## Bootstrap
 
 No manual procedure needed: the hourly schedule drains the backlog by itself. The first
-population is ~619 repos against GitHub's 500 content-creations/hour, so early runs create
+population is ~518 repos against GitHub's 500 content-creations/hour, so early runs create
 what they can and report the rest as `deferred`; each following hour picks those up until
 the count reaches zero.
 
@@ -222,7 +223,7 @@ Observed on the first real run: `synced=207 deferred=192 skipped=117 failed=1` �
 deferrals are the rate limiter working, not errors, and they cost nothing because progress
 is already recorded in `state/refs.json`.
 
-A first run pays a ~25 min ref scan for the 619 in-scope projects; later runs skip most of
+A first run pays a ref scan for the 518 in-scope projects; later runs skip most of
 it via `last_activity_at`.
 
 ## Running locally
@@ -248,8 +249,8 @@ silent for more than a minute or two:
 
 ```
 enumerating GitLab projects...
-enumerated 2039 projects
-scanning refs: 500/2039 (24/min, eta 64m)
+enumerated 1164 projects
+scanning refs: 500/1164 (24/min, eta 27m)
 syncing: 25/450 (12/min, eta 35m)
 ```
 
@@ -265,7 +266,7 @@ synced=N topics_only=N archived_changed=N skipped=N empty=N failed=N
 branch, read from [branch compare](https://manjaristas.org/branch_compare). An overlay that
 sits behind stable and that nobody has touched for a month has probably been dropped.
 
-The package name cannot be taken from the repository path. 150 of the 619 mirrors build it
+The package name cannot be taken from the repository path. many mirrors build it
 from shell variables, for example `pkgname="${_linuxprefix}-${_module}"`, so
 `makepkg --printsrcinfo` expands it. Guessing the name instead gave a 20% false positive
 rate in testing.
@@ -298,8 +299,8 @@ Hourly, alternating scope:
 
 | hours | cron | scope |
 | --- | --- | --- |
-| odd | `17 1-23/2 * * *` | live only — 619 projects |
-| even | `17 0-22/2 * * *` | `--include-stale` — all 2039, archived included |
+| odd | `17 1-23/2 * * *` | live only — 518 projects |
+| even | `17 0-22/2 * * *` | `--include-stale` — all 1164, archived included |
 
 The odd-hour runs keep active packages close to upstream. The even-hour runs pick up
 archived and long-dormant projects, which is also what keeps the **archived bit tracking
