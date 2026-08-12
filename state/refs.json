@@ -13115,9 +13115,9 @@
     },
     "web/iso-info": {
       "archived": false,
-      "digest": "sha256:c177ba048395755eb60820330d0744cd006b250f2655b4fc338107d4f3111e60",
-      "last_activity_at": "2026-04-02T13:41:10.585Z",
-      "synced_at": "2026-08-07T09:27:12Z",
+      "digest": "sha256:fe1114fefec39af6a2f1b0bdaa62b5b16226eeb1025a341c33d0f91ff54ed033",
+      "last_activity_at": "2026-08-12T19:36:29.239Z",
+      "synced_at": "2026-08-12T20:09:19Z",
       "topics": [
         "gitlab-mirror",
         "web"
