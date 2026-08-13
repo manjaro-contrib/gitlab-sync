@@ -3130,9 +3130,9 @@
     },
     "packages/extra/brave": {
       "archived": false,
-      "digest": "sha256:ecf71520fe89e427c313e9ff748c1b975ab15702c224f64604c03d5be828d243",
-      "last_activity_at": "2026-08-09T20:23:02.365Z",
-      "synced_at": "2026-08-09T20:55:26Z",
+      "digest": "sha256:e746ebbc0174006ff3911fa6297cbd0f00262e55276078dcbc86b69458959553",
+      "last_activity_at": "2026-08-13T17:02:03.252Z",
+      "synced_at": "2026-08-13T17:18:10Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -10933,9 +10933,9 @@
     },
     "packages/extra/python-gevent-eventemitter": {
       "archived": false,
-      "digest": "sha256:055f8c87f5eb0e823068dc2156fcf5d6fc2796f0dfd6591e1d3aa82501eccadc",
-      "last_activity_at": "2026-04-07T13:34:03.637Z",
-      "synced_at": "2026-08-07T11:31:42Z",
+      "digest": "sha256:33bb76d5deb260560d9db6835c9632b8d8274e2e33b456ff64ab33785b640dec",
+      "last_activity_at": "2026-08-13T16:45:06.104Z",
+      "synced_at": "2026-08-13T17:18:07Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -10977,9 +10977,9 @@
     },
     "packages/extra/python-libsass": {
       "archived": false,
-      "digest": "sha256:1f8420ece449a54a97d78b61ee3fbeb4a2e6a5d366ba57275145062023f9db0f",
-      "last_activity_at": "2026-04-06T17:18:08.653Z",
-      "synced_at": "2026-08-07T11:31:53Z",
+      "digest": "sha256:ae873996a29f3bc5ff5abb9193b41c0fb69068a7eeff953ffe7f19333da13caa",
+      "last_activity_at": "2026-08-13T17:01:27.406Z",
+      "synced_at": "2026-08-13T17:18:05Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -11087,9 +11087,9 @@
     },
     "packages/extra/python-steam": {
       "archived": false,
-      "digest": "sha256:2af266a43680a176b2684d57db70f7d56f5c77f08422b23940f12238db0d1dd5",
-      "last_activity_at": "2026-04-08T16:22:03.347Z",
-      "synced_at": "2026-08-07T11:31:29Z",
+      "digest": "sha256:1f7e31a900af36696b4ec087b37c7f8d25161d45b5911e6b612e013dee7f3e06",
+      "last_activity_at": "2026-08-13T17:03:40.465Z",
+      "synced_at": "2026-08-13T17:18:20Z",
       "topics": [
         "gitlab-mirror",
         "packages",
