@@ -2987,9 +2987,9 @@
     },
     "packages/extra/asusctl": {
       "archived": false,
-      "digest": "sha256:e93152f8ed7ca850475dcb9c43a6ce9110770d0e7ef0d08b1a7ed50380802c18",
-      "last_activity_at": "2026-07-30T14:28:54.717Z",
-      "synced_at": "2026-08-07T09:26:26Z",
+      "digest": "sha256:2dd0ab003da5175a11805213edde3367a45d92da92c834e09997eae7bb90f95b",
+      "last_activity_at": "2026-08-15T14:42:23.285Z",
+      "synced_at": "2026-08-15T15:42:43Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -3097,9 +3097,9 @@
     },
     "packages/extra/boxbuddy": {
       "archived": false,
-      "digest": "sha256:c546104b2d9c5aecb173fc1e2de52c5c3c46bcbeac9fe736826903805e00855e",
-      "last_activity_at": "2026-04-13T15:51:30.346Z",
-      "synced_at": "2026-08-07T11:27:07Z",
+      "digest": "sha256:ddf5d8f5121369a967c4126659be3a3294590f537454aa4bfcf45d92fe542f4d",
+      "last_activity_at": "2026-08-15T15:27:01.284Z",
+      "synced_at": "2026-08-15T15:42:10Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -3243,6 +3243,17 @@
       "digest": "sha256:d027e51e3424761a5c8f1280f585bbca47da8b01416a2a80a1f0649cca7d92b2",
       "last_activity_at": "2025-03-23T17:35:21.273Z",
       "synced_at": "2026-08-07T13:27:54Z",
+      "topics": [
+        "gitlab-mirror",
+        "packages",
+        "extra"
+      ]
+    },
+    "packages/extra/cardwire": {
+      "archived": false,
+      "digest": "sha256:972ab68ad7cd1ed3e8e485fe83d72c3aa3cc8fcd94fec89fedb72f46df31786e",
+      "last_activity_at": "2026-08-15T15:10:39.606Z",
+      "synced_at": "2026-08-15T15:42:43Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -3570,9 +3581,9 @@
     },
     "packages/extra/envycontrol": {
       "archived": false,
-      "digest": "sha256:b69bf89e6935e8a7f55506d8f1a1c90cf6678ff869c8e12da56fd512b5e4c077",
-      "last_activity_at": "2026-01-10T20:48:50.749Z",
-      "synced_at": "2026-08-07T11:35:41Z",
+      "digest": "sha256:cd8f02a0a9f9a23c45fbeff9a952a1968586516b1cd545b5c2c12c37f0c57cf2",
+      "last_activity_at": "2026-08-15T14:50:03.096Z",
+      "synced_at": "2026-08-15T15:42:23Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -3925,6 +3936,17 @@
       "digest": "sha256:3d7e093ada2f578be1b8512d8bdcbb4b4231cca63c27baa1abbe6e11fba8d277",
       "last_activity_at": "2026-04-07T19:07:26.862Z",
       "synced_at": "2026-08-07T11:31:37Z",
+      "topics": [
+        "gitlab-mirror",
+        "packages",
+        "extra"
+      ]
+    },
+    "packages/extra/gnome-shell-extension-cardwire-toggle": {
+      "archived": false,
+      "digest": "sha256:e07148d8b01a6cc1e4c518e9a2504c7ad7df539fd5f9efc5eb49c4960b5a31ab",
+      "last_activity_at": "2026-08-15T15:14:33.393Z",
+      "synced_at": "2026-08-15T15:42:37Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -11593,9 +11615,9 @@
     },
     "packages/extra/supergfxctl": {
       "archived": false,
-      "digest": "sha256:657cd947cf1a80b18b025816da056bee067402e5eac4a76f469ab8ed31baf649",
-      "last_activity_at": "2026-02-14T15:49:05.343Z",
-      "synced_at": "2026-08-07T11:34:12Z",
+      "digest": "sha256:cf0033d07a69f7e04edba5a4ed08180ea7c7c2314f2a527da8dc8eb3a407b604",
+      "last_activity_at": "2026-08-15T14:48:14.107Z",
+      "synced_at": "2026-08-15T15:42:47Z",
       "topics": [
         "gitlab-mirror",
         "packages",
