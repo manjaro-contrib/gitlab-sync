@@ -12242,9 +12242,9 @@
     },
     "packages/extra/zsh-theme-powerlevel10k": {
       "archived": false,
-      "digest": "sha256:b24639c1a92c461875d8535cb9a340bab192c0b118df2b9e416cb1e2cb458102",
-      "last_activity_at": "2026-06-15T13:14:49.869Z",
-      "synced_at": "2026-08-07T10:47:18Z",
+      "digest": "sha256:f5d838faa1e3dcf0e3568b5441b6eac1fd1482b74d6f84bf2b98f9210ad49ebf",
+      "last_activity_at": "2026-08-15T13:55:21.628Z",
+      "synced_at": "2026-08-15T14:43:33Z",
       "topics": [
         "gitlab-mirror",
         "packages",
