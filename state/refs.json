@@ -2327,9 +2327,9 @@
     },
     "packages/core/linux618": {
       "archived": false,
-      "digest": "sha256:5dd4d7e85d68b7ee6a2bce8fbe49602c1d405cf123c95bdca318365cac3993bb",
-      "last_activity_at": "2026-08-17T08:15:56.137Z",
-      "synced_at": "2026-08-17T09:02:56Z",
+      "digest": "sha256:e4397acfe1ceaa2c274479d3621a7ce2627fc16affaf7169eaa3503be86f337e",
+      "last_activity_at": "2026-08-17T13:21:27.054Z",
+      "synced_at": "2026-08-17T13:58:55Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -2525,9 +2525,9 @@
     },
     "packages/core/linux71": {
       "archived": false,
-      "digest": "sha256:452aba5a49a91e9d6c1e52d88ff84cc14230314a6079f933229ec760063a0acd",
-      "last_activity_at": "2026-08-17T08:14:16.763Z",
-      "synced_at": "2026-08-17T09:02:57Z",
+      "digest": "sha256:5136cf5c4fff5e7a4a20bb4fbd160be1d7b1f5fce6d496654d29021840192512",
+      "last_activity_at": "2026-08-17T13:12:40.604Z",
+      "synced_at": "2026-08-17T13:58:47Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -2910,9 +2910,9 @@
     },
     "packages/extra/arkdep": {
       "archived": false,
-      "digest": "sha256:745c0d2895d7002b6dadccef1e99f0d92ace342f2d5325338bd9236d6dd92840",
-      "last_activity_at": "2026-07-31T03:28:20.935Z",
-      "synced_at": "2026-08-07T09:26:09Z",
+      "digest": "sha256:6caa1e01ee7119f3751d34c920b568307fdaa76c00bcceaecd90c060fe964375",
+      "last_activity_at": "2026-08-17T13:36:17.981Z",
+      "synced_at": "2026-08-17T13:58:41Z",
       "topics": [
         "gitlab-mirror",
         "packages",
