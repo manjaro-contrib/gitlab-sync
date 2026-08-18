@@ -12767,9 +12767,9 @@
     },
     "profiles-and-settings/iso-profiles": {
       "archived": false,
-      "digest": "sha256:4fd0a7404ecaedb18f779e36c16fc2f5ef7593d2bb2b9dbfb5f0c2092284bf92",
-      "last_activity_at": "2026-07-20T18:49:11.494Z",
-      "synced_at": "2026-08-07T09:26:41Z",
+      "digest": "sha256:8b2808eb81f0a80ef3e4eb671902ea224e9e685bd2ac2dcb3c470f73b85ba0ef",
+      "last_activity_at": "2026-08-18T06:00:37.943Z",
+      "synced_at": "2026-08-18T07:08:20Z",
       "topics": [
         "gitlab-mirror",
         "profiles-and-settings"
