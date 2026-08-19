@@ -9965,9 +9965,9 @@
     },
     "packages/extra/nvidia-390xx-utils": {
       "archived": false,
-      "digest": "sha256:68601fb9d82cb59969ab2d8002c3c38ba99798d9c5b3fcea39a0772ca8b24cfe",
-      "last_activity_at": "2026-08-12T17:40:24.308Z",
-      "synced_at": "2026-08-12T18:09:49Z",
+      "digest": "sha256:755df34197dad368e9d5bdaf8b89a865e0c999b951eacae334c11c993e29f839",
+      "last_activity_at": "2026-08-19T14:11:29.654Z",
+      "synced_at": "2026-08-19T14:57:20Z",
       "topics": [
         "gitlab-mirror",
         "packages",
