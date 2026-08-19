@@ -2437,9 +2437,9 @@
     },
     "packages/core/linux66": {
       "archived": false,
-      "digest": "sha256:7d920e77284a7d36a9127f50c2631be75425a8eaec37bf1a3f28ec4449b6845c",
-      "last_activity_at": "2026-08-11T20:34:36.584Z",
-      "synced_at": "2026-08-11T21:07:11Z",
+      "digest": "sha256:6704305ce40ce1d891bab2447b18c23cfd1526ae0a53fcf8b2c7e9fc15350f15",
+      "last_activity_at": "2026-08-19T20:24:11.709Z",
+      "synced_at": "2026-08-19T20:55:36Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -9382,9 +9382,9 @@
     },
     "packages/extra/manjaro-settings-manager": {
       "archived": false,
-      "digest": "sha256:4271f3369206fefe3221699a7c8328de6f676f1e99a13b6ccabc8a7c958d39ef",
-      "last_activity_at": "2026-08-19T17:49:23.671Z",
-      "synced_at": "2026-08-19T19:45:01Z",
+      "digest": "sha256:e60180f0354baaf546d03628b3e3397f1e9737f4fa3c94f362a9cdf3e599738c",
+      "last_activity_at": "2026-08-19T19:57:54.031Z",
+      "synced_at": "2026-08-19T20:53:59Z",
       "topics": [
         "gitlab-mirror",
         "packages",
