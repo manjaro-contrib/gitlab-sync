@@ -8723,9 +8723,9 @@
     },
     "packages/extra/linux71-extramodules/virtualbox": {
       "archived": false,
-      "digest": "sha256:a6cb457fabf0230e81bef69768c98680c42ae5eb8a005a58af77f6dabda5fa7a",
-      "last_activity_at": "2026-08-19T13:11:48.408Z",
-      "synced_at": "2026-08-19T14:03:28Z",
+      "digest": "sha256:817cbbe4b605f8fea5bb3d5c6c20cea469425add85bbbe7eb1b1cfeb6a924902",
+      "last_activity_at": "2026-08-19T15:58:34.237Z",
+      "synced_at": "2026-08-19T16:57:43Z",
       "topics": [
         "gitlab-mirror",
         "packages",
