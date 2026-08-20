@@ -9382,9 +9382,9 @@
     },
     "packages/extra/manjaro-settings-manager": {
       "archived": false,
-      "digest": "sha256:35c2ed5109c44b9835f0fd38cb4ccbe83869623958b97869a3e9bcf3a69f93ed",
-      "last_activity_at": "2026-08-20T17:47:12.395Z",
-      "synced_at": "2026-08-20T17:48:12Z",
+      "digest": "sha256:29b4b3ff1a5f26f08760fa599f78a983636799b75fdb08156bcb2a59ba7ee122",
+      "last_activity_at": "2026-08-20T22:24:57.780Z",
+      "synced_at": "2026-08-20T22:47:39Z",
       "topics": [
         "gitlab-mirror",
         "packages",
