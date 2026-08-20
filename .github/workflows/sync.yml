@@ -42,7 +42,7 @@ jobs:
       # Pinned to the exact release: setup-uv publishes no floating v9 tag
       # (v7 is the newest major alias), so @v9 fails to resolve.
       # No cache either: the project has no dependencies to restore.
-      - uses: astral-sh/setup-uv@v9.0.0
+      - uses: astral-sh/setup-uv@v10.0.1
       - run: echo "::add-mask::${{ secrets.GH_MIRROR_TOKEN }}"
       - name: Sync
         env:
