@@ -11439,9 +11439,9 @@
     },
     "packages/extra/snapd": {
       "archived": false,
-      "digest": "sha256:d487389441c615af49b62d0b80ef232545eb60b23790a96684bcc6889bb31e0d",
-      "last_activity_at": "2026-08-18T15:25:44.241Z",
-      "synced_at": "2026-08-18T15:48:24Z",
+      "digest": "sha256:c6790c3fcb8ca626db48d3237ca9b845c04c71ddf99d5678868e0050fa8a4a6d",
+      "last_activity_at": "2026-08-21T14:32:12.602Z",
+      "synced_at": "2026-08-21T16:55:46Z",
       "topics": [
         "gitlab-mirror",
         "packages",
