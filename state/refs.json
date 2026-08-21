@@ -3130,9 +3130,9 @@
     },
     "packages/extra/brave": {
       "archived": false,
-      "digest": "sha256:f1c361582177e7ea9c7e6601d2e0c1cd7f2199c9d3b70a9c984b8d78afcee937",
-      "last_activity_at": "2026-08-19T10:57:01.155Z",
-      "synced_at": "2026-08-19T11:43:42Z",
+      "digest": "sha256:ffcf827a7d4b9a489142adeb6ae7e5c863efa3d8a00e50838496b499bfb871b9",
+      "last_activity_at": "2026-08-21T21:06:32.699Z",
+      "synced_at": "2026-08-21T21:42:15Z",
       "topics": [
         "gitlab-mirror",
         "packages",
