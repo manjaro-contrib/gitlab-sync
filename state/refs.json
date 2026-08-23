@@ -3449,9 +3449,9 @@
     },
     "packages/extra/dkms": {
       "archived": false,
-      "digest": "sha256:7d9d011e43f813cc47587e9a57bc9835448726954d11ac5e5c16bb2678c2727f",
-      "last_activity_at": "2026-08-04T14:27:12.574Z",
-      "synced_at": "2026-08-07T09:19:38Z",
+      "digest": "sha256:1efb11f505e7c0a1e33ac094ebe375e71703424272deb3c9dcb6b850db08906b",
+      "last_activity_at": "2026-08-23T13:47:57.855Z",
+      "synced_at": "2026-08-23T13:51:28Z",
       "topics": [
         "gitlab-mirror",
         "packages",
