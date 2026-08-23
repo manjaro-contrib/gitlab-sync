@@ -2721,6 +2721,17 @@
         "extra"
       ]
     },
+    "packages/extra/acpi_call-dkms": {
+      "archived": false,
+      "digest": "sha256:46279227ca6aecc9ae9180e38a0d5f26f4d329cf2381ef940cf326259bd8de09",
+      "last_activity_at": "2026-08-23T21:41:09.126Z",
+      "synced_at": "2026-08-23T22:54:11Z",
+      "topics": [
+        "gitlab-mirror",
+        "packages",
+        "extra"
+      ]
+    },
     "packages/extra/adapta-manjaro-themes": {
       "archived": false,
       "digest": "sha256:1879b8169d4f6ef8e3cd149b2b5186c2adaa844b4bfb6cff63e59e6cf2aa1de3",
