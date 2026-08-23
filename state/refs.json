@@ -12275,9 +12275,9 @@
     },
     "packages/multilib/crossover": {
       "archived": false,
-      "digest": "sha256:7e49c3d259f364df066a8a46a3e5c465e18c9eb10162f548b521fb8f7ae7d96d",
-      "last_activity_at": "2026-08-10T19:38:22.223Z",
-      "synced_at": "2026-08-10T20:05:57Z",
+      "digest": "sha256:7e05d80346a3c741ccfcdb04c70f8d5e8a083debc09a8ecfa0751b191a21df3b",
+      "last_activity_at": "2026-08-23T18:25:51.235Z",
+      "synced_at": "2026-08-23T18:56:30Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -12286,9 +12286,9 @@
     },
     "packages/multilib/crossover-extras": {
       "archived": false,
-      "digest": "sha256:c07e034b54bbb697a9d4928484dbef52a72a3293e255936b9c4dac9c14882f9e",
-      "last_activity_at": "2026-08-10T19:35:08.145Z",
-      "synced_at": "2026-08-10T20:06:00Z",
+      "digest": "sha256:f402317336bfbc249eef262c26c3d048a5941532dc33fe31cefbe7d23a6fe670",
+      "last_activity_at": "2026-08-23T18:38:36.375Z",
+      "synced_at": "2026-08-23T18:56:36Z",
       "topics": [
         "gitlab-mirror",
         "packages",
