@@ -2129,9 +2129,9 @@
     },
     "packages/core/linux61": {
       "archived": false,
-      "digest": "sha256:2dd951db9c9a0e09b99c52649f52218f20c12f80c4c1b83fc324885d08dc02d4",
-      "last_activity_at": "2026-08-19T18:02:59.283Z",
-      "synced_at": "2026-08-19T19:45:10Z",
+      "digest": "sha256:f497b6afce7de248f7a814d5b13dbe7f10fe9bbf572a6da23dff20b6589c74a8",
+      "last_activity_at": "2026-08-24T02:05:01.583Z",
+      "synced_at": "2026-08-24T02:53:38Z",
       "topics": [
         "gitlab-mirror",
         "packages",
