@@ -2195,9 +2195,9 @@
     },
     "packages/core/linux612": {
       "archived": false,
-      "digest": "sha256:5c5cb4e5c180d4e10405ea91cd13d3a68170ec7a12a00307a967e169bf9bc582",
-      "last_activity_at": "2026-08-19T22:25:58.695Z",
-      "synced_at": "2026-08-19T22:50:51Z",
+      "digest": "sha256:20008b488d6e00dfbc8524e6299e260caec3df7e49feee8fbfe3377b069ebbf5",
+      "last_activity_at": "2026-08-24T02:06:00.814Z",
+      "synced_at": "2026-08-24T03:26:02Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -2327,9 +2327,9 @@
     },
     "packages/core/linux618": {
       "archived": false,
-      "digest": "sha256:cf9d29921daacea04acc4b81240e3ba34ef60a965d2b3b2c693e9ae43575f486",
-      "last_activity_at": "2026-08-22T17:43:38.984Z",
-      "synced_at": "2026-08-22T18:52:58Z",
+      "digest": "sha256:fe356b77c6cd4197561ac35de42d57160f40003ce048e4402529de5a9da9b2fa",
+      "last_activity_at": "2026-08-24T02:07:08.211Z",
+      "synced_at": "2026-08-24T03:26:09Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -2437,9 +2437,9 @@
     },
     "packages/core/linux66": {
       "archived": false,
-      "digest": "sha256:6e035c5188669c32f97d0101af429b117fa530f4cabc29a009a707bc3ff2e3fb",
-      "last_activity_at": "2026-08-19T22:09:15.821Z",
-      "synced_at": "2026-08-19T22:51:34Z",
+      "digest": "sha256:45a42d9b844233c6e0468af665fc99b6af7b2ed2feb798076d3d72fe93825917",
+      "last_activity_at": "2026-08-24T02:06:58.449Z",
+      "synced_at": "2026-08-24T03:26:10Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -2525,9 +2525,9 @@
     },
     "packages/core/linux71": {
       "archived": false,
-      "digest": "sha256:43a5f81f50418dc48b3b26c4058200689cef887c664ea512bc1b812244ad054b",
-      "last_activity_at": "2026-08-22T17:40:05.708Z",
-      "synced_at": "2026-08-22T18:52:56Z",
+      "digest": "sha256:e2cbcdeceb9ee3a467c22bb3ce2ba435c6a680b7773fa9316d95b19f1fdadaac",
+      "last_activity_at": "2026-08-24T02:09:13.003Z",
+      "synced_at": "2026-08-24T03:26:05Z",
       "topics": [
         "gitlab-mirror",
         "packages",
