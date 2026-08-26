@@ -8554,9 +8554,9 @@
     },
     "packages/extra/linux71-extramodules/broadcom-wl": {
       "archived": false,
-      "digest": "sha256:ab7c8bf5e46bcc888ae62f0ffd1eb5ee6bc3901a98551a163dbee3ad1f95c3e9",
-      "last_activity_at": "2026-08-24T04:18:16.402Z",
-      "synced_at": "2026-08-24T05:12:12Z",
+      "digest": "sha256:7abc1cf6868fcd626594a69fd8ed0561c3f980889d816d542036f99ee5670c65",
+      "last_activity_at": "2026-08-26T16:59:26.726Z",
+      "synced_at": "2026-08-26T17:02:29Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -10361,9 +10361,9 @@
     },
     "packages/extra/pacui": {
       "archived": false,
-      "digest": "sha256:18572b7f7d2acb12a1f6474f55ce3654006ccf3037c578859bf662686920983a",
-      "last_activity_at": "2026-07-30T15:15:54.778Z",
-      "synced_at": "2026-08-07T09:26:17Z",
+      "digest": "sha256:8d772490aa90a6b2f1471c3bda8d91d1ecedf9f7c68a4ddac4f9c67cdf0bedd7",
+      "last_activity_at": "2026-08-26T16:56:54.913Z",
+      "synced_at": "2026-08-26T17:02:28Z",
       "topics": [
         "gitlab-mirror",
         "packages",
