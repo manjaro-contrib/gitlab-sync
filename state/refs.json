@@ -2646,9 +2646,9 @@
     },
     "packages/core/pacman-static": {
       "archived": false,
-      "digest": "sha256:9f1e7d60e12cbc033dc656cbd6750714b865006b46d8fbccd5f38082d406e66f",
-      "last_activity_at": "2026-07-31T14:11:19.804Z",
-      "synced_at": "2026-08-07T09:26:12Z",
+      "digest": "sha256:7d50f43e965caf54d3b254d0a36242e74e4ae7935c44779b2949270201ea1c8d",
+      "last_activity_at": "2026-08-27T13:41:44.877Z",
+      "synced_at": "2026-08-27T20:35:40Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -4054,9 +4054,9 @@
     },
     "packages/extra/gnome-shell-extension-gtk4-desktop-icons-ng": {
       "archived": false,
-      "digest": "sha256:e2946a754f95c6d06e211b5cac06eedebaf049fc32e47b943e7cd2655c4996e3",
-      "last_activity_at": "2026-08-11T17:55:04.640Z",
-      "synced_at": "2026-08-11T18:08:17Z",
+      "digest": "sha256:fdf0e3a9ab837ef898c652344962bc5341a20767668e8635fc029f9b2b95bc6e",
+      "last_activity_at": "2026-08-27T18:57:37.973Z",
+      "synced_at": "2026-08-27T20:35:41Z",
       "topics": [
         "gitlab-mirror",
         "packages",
