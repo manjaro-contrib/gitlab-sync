@@ -4538,9 +4538,9 @@
     },
     "packages/extra/kvantum-manjaro": {
       "archived": false,
-      "digest": "sha256:57e2e79e7840cf3ea4911a68aee5af903d33058b6b4168d0fe2baa211100654e",
-      "last_activity_at": "2026-08-10T19:55:52.935Z",
-      "synced_at": "2026-08-10T20:05:01Z",
+      "digest": "sha256:4385696a612bf88e1a24bf1fc4f9b1f95592b120d3f52a6c6be40b94f954fe38",
+      "last_activity_at": "2026-08-29T14:40:35.222Z",
+      "synced_at": "2026-08-29T16:50:10Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -9393,9 +9393,9 @@
     },
     "packages/extra/manjaro-settings-manager": {
       "archived": false,
-      "digest": "sha256:9a4552eeff7dbe83c9c5e7cbeb32dcba3aa944768fd95393a5679a6b61b36a5a",
-      "last_activity_at": "2026-08-28T19:40:34.327Z",
-      "synced_at": "2026-08-29T02:58:23Z",
+      "digest": "sha256:7d86e746e98f73d7cbf5e0d0df7d9b984dc32f9960e1a0e7c708940e06eb6afc",
+      "last_activity_at": "2026-08-29T15:29:40.565Z",
+      "synced_at": "2026-08-29T16:50:44Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -9536,9 +9536,9 @@
     },
     "packages/extra/matcha-kde-theme": {
       "archived": false,
-      "digest": "sha256:cd1032f70802187396932e4cbf9503ecfb65c108e41a9c1128a1e0951ad1d38a",
-      "last_activity_at": "2024-08-12T22:07:04.468Z",
-      "synced_at": "2026-08-07T13:32:50Z",
+      "digest": "sha256:ab56ce1e18e7884fc6f157d2c2ce307a1c6aca6e94a024eaaef96bd721b7c731",
+      "last_activity_at": "2026-08-29T15:11:52.592Z",
+      "synced_at": "2026-08-29T16:50:10Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -13198,9 +13198,9 @@
     },
     "web/manjaro-web-repo": {
       "archived": false,
-      "digest": "sha256:db223baffea6f75553f641d87e2d703194ccd473c51e7403d22d7bc3f93ccc5e",
-      "last_activity_at": "2026-08-15T13:38:45.866Z",
-      "synced_at": "2026-08-15T13:46:17Z",
+      "digest": "sha256:cc5d3ccccc37f727588ec0d7e879910114e3199f69367a23da6669683bc77903",
+      "last_activity_at": "2026-08-29T14:34:09.307Z",
+      "synced_at": "2026-08-29T16:49:49Z",
       "topics": [
         "gitlab-mirror",
         "web"
