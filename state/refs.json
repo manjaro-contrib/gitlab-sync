@@ -5770,9 +5770,9 @@
     },
     "packages/extra/linux61-extramodules/zfs": {
       "archived": false,
-      "digest": "sha256:231d90a65ca65fe1959130ac382d45ae1145f32661d17917b095e8126282bc1c",
-      "last_activity_at": "2026-08-28T19:43:38.598Z",
-      "synced_at": "2026-08-29T02:58:17Z",
+      "digest": "sha256:a78bbb99cff8e483a77e855512a25324c31376999f8fa395188a58a86186175c",
+      "last_activity_at": "2026-08-30T11:32:27.316Z",
+      "synced_at": "2026-08-30T13:07:28Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -6214,9 +6214,9 @@
     },
     "packages/extra/linux612-extramodules/zfs": {
       "archived": false,
-      "digest": "sha256:a643a6b191aa5e6b447c20a775eedad8b65395ecfa2581607fa2c684506cd000",
-      "last_activity_at": "2026-08-28T23:35:48.904Z",
-      "synced_at": "2026-08-29T02:56:54Z",
+      "digest": "sha256:85f342675f9f85861f8e5ee24abf1cee94b54261b062607ae96dfa2fc74d3c69",
+      "last_activity_at": "2026-08-30T11:42:41.361Z",
+      "synced_at": "2026-08-30T13:07:46Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -7414,9 +7414,9 @@
     },
     "packages/extra/linux618-extramodules/zfs": {
       "archived": false,
-      "digest": "sha256:95e3e1f871a814557c41748db264d5b147255c84b5403acaefe67ff065e02606",
-      "last_activity_at": "2026-08-28T20:24:52.693Z",
-      "synced_at": "2026-08-29T02:56:55Z",
+      "digest": "sha256:5c9b5fbdb979276a31fd31761c9faaf4087c7fd653b707739f2649772514e912",
+      "last_activity_at": "2026-08-30T11:50:58.643Z",
+      "synced_at": "2026-08-30T13:07:37Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -8062,9 +8062,9 @@
     },
     "packages/extra/linux66-extramodules/zfs": {
       "archived": false,
-      "digest": "sha256:0c0b9c045ceb5e8c651ab5b9fa3a96eaf99afa408eb373d7727e881b857b9055",
-      "last_activity_at": "2026-08-28T19:53:02.109Z",
-      "synced_at": "2026-08-29T02:57:58Z",
+      "digest": "sha256:cf412d4b93f02b44fd49f682dce85d89ce6209322e7710e2b8a4c6297426ea3b",
+      "last_activity_at": "2026-08-30T11:37:17.475Z",
+      "synced_at": "2026-08-30T13:07:47Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -8698,9 +8698,9 @@
     },
     "packages/extra/linux71-extramodules/rtl8723bu": {
       "archived": false,
-      "digest": "sha256:b1820abecc90cf6e5be53fe45213ebba713fbf54e42abb4ec3fbeea508475441",
-      "last_activity_at": "2026-08-26T17:18:57.819Z",
-      "synced_at": "2026-08-26T19:24:15Z",
+      "digest": "sha256:c1d1dd0fe472b523a436de5ec3d3f8fcb14bfd8f2f16f09b1182856fefeefe99",
+      "last_activity_at": "2026-08-30T12:43:31.478Z",
+      "synced_at": "2026-08-30T13:06:19Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -8746,9 +8746,9 @@
     },
     "packages/extra/linux71-extramodules/zfs": {
       "archived": false,
-      "digest": "sha256:2f921aed7afe7f1ba74bb4297fb32375bef5b7cd46acfcf4d3ab26a558443246",
-      "last_activity_at": "2026-08-28T20:23:23.366Z",
-      "synced_at": "2026-08-29T02:57:07Z",
+      "digest": "sha256:e489a4e80a7bd96a3d758c587050eb00a02385becb6c03bba62fafdb3452d6ca",
+      "last_activity_at": "2026-08-30T11:57:35.334Z",
+      "synced_at": "2026-08-30T13:06:00Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -8938,9 +8938,9 @@
     },
     "packages/extra/linux72-extramodules/tp_smapi": {
       "archived": false,
-      "digest": "sha256:25c3780438c31dd8a0e4d8d840bc616e3863d0c96079c15535f19bbc12cf196a",
-      "last_activity_at": "2026-06-22T03:45:57.387Z",
-      "synced_at": "2026-08-07T10:46:45Z",
+      "digest": "sha256:3ee2922f82be54446343229603961d3ff408d7416c6f80d9a62563c9d790c829",
+      "last_activity_at": "2026-08-30T12:13:17.020Z",
+      "synced_at": "2026-08-30T13:05:57Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -8974,9 +8974,9 @@
     },
     "packages/extra/linux72-extramodules/zfs": {
       "archived": false,
-      "digest": "sha256:1c3f58c3be28be9f1ff1fc10d54866ab8352866627df33e845a30fca9c4de244",
-      "last_activity_at": "2026-06-22T03:46:09.223Z",
-      "synced_at": "2026-08-07T10:46:38Z",
+      "digest": "sha256:44f330785e06dc438b752ebefb28462fb93c816748aa80674855da9af5d9feb2",
+      "last_activity_at": "2026-08-30T12:01:57.848Z",
+      "synced_at": "2026-08-30T13:06:14Z",
       "topics": [
         "gitlab-mirror",
         "packages",
