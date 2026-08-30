@@ -8926,9 +8926,9 @@
     },
     "packages/extra/linux72-extramodules/rtl8723bu": {
       "archived": false,
-      "digest": "sha256:18a9c4e24ef59c0a2a7cc2b4d7f98dc51a7afa63cd2545ea34276dc8c4dbc87c",
-      "last_activity_at": "2026-06-22T03:45:54.401Z",
-      "synced_at": "2026-08-07T10:46:47Z",
+      "digest": "sha256:157c25df2bfd00f50a37e7bd3c73aa57760be34bf1e4c9f5927e5e4856c10289",
+      "last_activity_at": "2026-08-30T14:02:33.969Z",
+      "synced_at": "2026-08-30T15:06:19Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -12208,10 +12208,10 @@
       ]
     },
     "packages/extra/xviewer": {
-      "archived": true,
+      "archived": false,
       "digest": "sha256:112599fd2c56cc96658e5ea239ce8d1726899f79b74e3e8b53af1508bfbbf943",
       "last_activity_at": "2026-01-08T20:16:47.730Z",
-      "synced_at": "2026-08-07T17:29:20Z",
+      "synced_at": "2026-08-30T15:05:41Z",
       "topics": [
         "gitlab-mirror",
         "packages",
