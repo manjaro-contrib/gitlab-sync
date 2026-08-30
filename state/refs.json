@@ -12209,9 +12209,9 @@
     },
     "packages/extra/xviewer": {
       "archived": false,
-      "digest": "sha256:112599fd2c56cc96658e5ea239ce8d1726899f79b74e3e8b53af1508bfbbf943",
-      "last_activity_at": "2026-01-08T20:16:47.730Z",
-      "synced_at": "2026-08-30T15:05:41Z",
+      "digest": "sha256:6004e487a277b32d816a574b5ee3a07c120d6a078e7b35250587964f3de04370",
+      "last_activity_at": "2026-08-30T15:27:06.874Z",
+      "synced_at": "2026-08-30T17:32:50Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -12898,9 +12898,9 @@
     },
     "release-plan/packaging": {
       "archived": false,
-      "digest": "sha256:48558dbcad80e1264b913d0285767b4309941069dd135676fbf752ffafa33c1b",
-      "last_activity_at": "2026-08-23T14:30:26.543Z",
-      "synced_at": "2026-08-23T16:50:56Z",
+      "digest": "sha256:6dfe8e745d63fe7e9401ee5c22ec70250d18531df86f6eca7dc1d28996d80262",
+      "last_activity_at": "2026-08-30T15:32:18.744Z",
+      "synced_at": "2026-08-30T17:32:51Z",
       "topics": [
         "gitlab-mirror",
         "release-plan"
