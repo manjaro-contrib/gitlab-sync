@@ -3107,10 +3107,10 @@
       ]
     },
     "packages/extra/boxbuddy": {
-      "archived": false,
+      "archived": true,
       "digest": "sha256:ddf5d8f5121369a967c4126659be3a3294590f537454aa4bfcf45d92fe542f4d",
       "last_activity_at": "2026-08-15T15:27:01.284Z",
-      "synced_at": "2026-08-15T15:42:10Z",
+      "synced_at": "2026-08-30T00:26:32Z",
       "topics": [
         "gitlab-mirror",
         "packages",
