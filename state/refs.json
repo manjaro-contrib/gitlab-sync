@@ -2545,6 +2545,17 @@
         "core"
       ]
     },
+    "packages/core/linux73": {
+      "archived": false,
+      "digest": "sha256:df1878e8864b40e903fe03343424c6068099ae01012115de0d935bba39e06a6a",
+      "last_activity_at": "2026-08-31T18:36:31.805Z",
+      "synced_at": "2026-08-31T20:11:27Z",
+      "topics": [
+        "gitlab-mirror",
+        "packages",
+        "core"
+      ]
+    },
     "packages/core/lsb-release": {
       "archived": false,
       "digest": "sha256:82d2aaf6931ec404c45b7ff78740892c9f77049399a948883c258f612e44703d",
