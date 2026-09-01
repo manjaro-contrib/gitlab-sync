@@ -12909,9 +12909,9 @@
     },
     "release-plan/packaging": {
       "archived": false,
-      "digest": "sha256:6dfe8e745d63fe7e9401ee5c22ec70250d18531df86f6eca7dc1d28996d80262",
-      "last_activity_at": "2026-08-30T15:32:18.744Z",
-      "synced_at": "2026-08-30T17:32:51Z",
+      "digest": "sha256:86718ac74619b700b74cdf8abc28f7a9b4e5689a31922ceeb14a24a36fcea030",
+      "last_activity_at": "2026-09-01T16:25:49.422Z",
+      "synced_at": "2026-09-01T16:49:00Z",
       "topics": [
         "gitlab-mirror",
         "release-plan"
