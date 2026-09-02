@@ -11648,9 +11648,9 @@
     },
     "packages/extra/surfshark-client": {
       "archived": false,
-      "digest": "sha256:eb12f803a9fa89d40fb8d94165091d191fdf5580e8e90a32b9b9bac0d9b79f02",
-      "last_activity_at": "2026-08-06T15:33:26.879Z",
-      "synced_at": "2026-08-07T09:19:26Z",
+      "digest": "sha256:7baec3c41116eaf4b672d02b4e27798d95a5a1c1929e7a888e8c0416cf225607",
+      "last_activity_at": "2026-09-02T14:01:39.223Z",
+      "synced_at": "2026-09-02T17:08:43Z",
       "topics": [
         "gitlab-mirror",
         "packages",
