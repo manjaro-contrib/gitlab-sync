@@ -3174,9 +3174,9 @@
     },
     "packages/extra/broadcom-wl-dkms": {
       "archived": false,
-      "digest": "sha256:bfdf22cf83782b8bdbc3ed266dfd3a09e84cf67ee7afa4cbf47162b18eb5c1b5",
-      "last_activity_at": "2026-06-28T14:09:46.794Z",
-      "synced_at": "2026-08-07T10:45:10Z",
+      "digest": "sha256:713aaf4c6021c5173f04a92adead8b8b383359d459001b2220dcddb747563aac",
+      "last_activity_at": "2026-09-02T18:57:48.262Z",
+      "synced_at": "2026-09-02T19:58:11Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -8793,9 +8793,9 @@
     },
     "packages/extra/linux72-extramodules/broadcom-wl": {
       "archived": false,
-      "digest": "sha256:7d2913b052a0573df7c5cd193c2ab4dc3e577a771f8495a6230afedca3189b88",
-      "last_activity_at": "2026-08-28T20:11:47.453Z",
-      "synced_at": "2026-08-29T02:57:37Z",
+      "digest": "sha256:9003d71748f5bfed82df144b868c91a326eb325f51ad6efa8fd5d1a2e2935278",
+      "last_activity_at": "2026-09-02T19:00:29.310Z",
+      "synced_at": "2026-09-02T19:58:01Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -13209,9 +13209,9 @@
     },
     "web/manjaro-web-repo": {
       "archived": false,
-      "digest": "sha256:7bfaf8072abfdf41138913e3affc1891a5116193402083dfc52b892edd600f90",
-      "last_activity_at": "2026-09-01T09:59:17.887Z",
-      "synced_at": "2026-09-01T11:46:20Z",
+      "digest": "sha256:f2a681e7b09a76f3dfddcaad6c202e5dd0a9825d1abeb0fc96e1a72d124dbc29",
+      "last_activity_at": "2026-09-02T12:41:13.701Z",
+      "synced_at": "2026-09-02T19:57:50Z",
       "topics": [
         "gitlab-mirror",
         "web"
