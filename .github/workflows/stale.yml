@@ -33,7 +33,7 @@ jobs:
     timeout-minutes: 120
     steps:
       - uses: actions/checkout@v7
-      - uses: astral-sh/setup-uv@v9.0.0
+      - uses: astral-sh/setup-uv@v10.0.1
       - name: Install makepkg
         run: sudo apt-get update -qq && sudo apt-get install -y -qq pacman-package-manager
       - name: Classify
