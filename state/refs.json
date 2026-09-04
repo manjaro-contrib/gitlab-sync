@@ -5565,9 +5565,9 @@
     },
     "packages/extra/linux61-extramodules/acpi_call": {
       "archived": false,
-      "digest": "sha256:3deafaa349b6e8807d2f9afa78270ed7bed9be6422e8f1c1da0f59275b41b502",
-      "last_activity_at": "2026-09-03T05:12:52.319Z",
-      "synced_at": "2026-09-03T13:03:35Z",
+      "digest": "sha256:1249b82252a3ba68f63ef0091f3bd0c252ba51a7eefe96ceea27b64a90d8fcd5",
+      "last_activity_at": "2026-09-04T16:52:55.866Z",
+      "synced_at": "2026-09-04T16:56:27Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -5577,9 +5577,9 @@
     },
     "packages/extra/linux61-extramodules/bbswitch": {
       "archived": false,
-      "digest": "sha256:9d275129b8038a640ae0c0c12084fdd446ccfa8db812af5233416b84364811e2",
-      "last_activity_at": "2026-09-03T05:13:00.002Z",
-      "synced_at": "2026-09-03T13:02:55Z",
+      "digest": "sha256:0a0d64e0f1dbb2cf49d478b09aaf474426b4640f1de2a82690a5261728da866a",
+      "last_activity_at": "2026-09-04T16:54:13.556Z",
+      "synced_at": "2026-09-04T16:56:30Z",
       "topics": [
         "gitlab-mirror",
         "packages",
