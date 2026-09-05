@@ -2195,9 +2195,9 @@
     },
     "packages/core/linux612": {
       "archived": false,
-      "digest": "sha256:fa75b504ab88cc94c38ad8876ce28f8d7f8a10bdcf6f69c1d4ea4f0c0e8843f2",
-      "last_activity_at": "2026-09-03T05:12:53.290Z",
-      "synced_at": "2026-09-03T13:02:41Z",
+      "digest": "sha256:1999fc53c7ee2f54fee56932c5f0a2ff6f2dde1bbdf4a8841c47565e510eeb3e",
+      "last_activity_at": "2026-09-05T01:25:51.509Z",
+      "synced_at": "2026-09-05T04:33:20Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -6009,9 +6009,9 @@
     },
     "packages/extra/linux612-extramodules/acpi_call": {
       "archived": false,
-      "digest": "sha256:be89ead0a307d7035cb79efa1c38d6338eb630c90e8adaff1380e50a53b0dab3",
-      "last_activity_at": "2026-08-28T19:59:05.607Z",
-      "synced_at": "2026-08-29T02:57:56Z",
+      "digest": "sha256:c2c210450800685e8f996d4a841901cbc061a82c2616398240d2efff941fc82d",
+      "last_activity_at": "2026-09-05T03:30:45.881Z",
+      "synced_at": "2026-09-05T04:33:19Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -6021,9 +6021,9 @@
     },
     "packages/extra/linux612-extramodules/bbswitch": {
       "archived": false,
-      "digest": "sha256:95d16d94cbfc1257baf15d97633d8ecb9c54f09df37b6f749b04686c1a721a82",
-      "last_activity_at": "2026-08-28T19:59:11.923Z",
-      "synced_at": "2026-08-29T02:57:54Z",
+      "digest": "sha256:413f9683e1d1840f6caaa978b75eb44a942c55c95fcc6d12370e652ba0c189ed",
+      "last_activity_at": "2026-09-05T03:30:50.758Z",
+      "synced_at": "2026-09-05T04:33:18Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -6033,9 +6033,9 @@
     },
     "packages/extra/linux612-extramodules/broadcom-wl": {
       "archived": false,
-      "digest": "sha256:523711fa81cba0c89f0fd0299d128daa9874717c7b9c04bd0cf108b79fb021eb",
-      "last_activity_at": "2026-08-28T19:59:17.146Z",
-      "synced_at": "2026-08-29T02:57:54Z",
+      "digest": "sha256:ff183c3fcd8855ee0a6156d27ee22d34726449683d6adbaa55e117c771f398cf",
+      "last_activity_at": "2026-09-05T03:30:56.018Z",
+      "synced_at": "2026-09-05T04:33:16Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -6045,9 +6045,9 @@
     },
     "packages/extra/linux612-extramodules/nvidia": {
       "archived": false,
-      "digest": "sha256:4390b9937b86feda2dcecbad7f587f44ccb9605a2f8b9a50613fbdb6e4125f67",
-      "last_activity_at": "2026-08-28T19:59:22.679Z",
-      "synced_at": "2026-08-29T02:57:53Z",
+      "digest": "sha256:a9a4e676cf276b764951a3e249154a831f4cea1a375df3b7584c0e61608e0423",
+      "last_activity_at": "2026-09-05T03:31:01.631Z",
+      "synced_at": "2026-09-05T04:33:16Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -6057,9 +6057,9 @@
     },
     "packages/extra/linux612-extramodules/nvidia-390xx": {
       "archived": false,
-      "digest": "sha256:aabb20fb9c00abc57d6a4d8a3c758b7c13f281e0ac667601d2b44cfa22b66fd3",
-      "last_activity_at": "2026-08-28T19:59:29.998Z",
-      "synced_at": "2026-08-29T02:57:52Z",
+      "digest": "sha256:ed633732f42643dac9be388cb83d2c4d6a5b0556d404554fcac6b96a2bc9a210",
+      "last_activity_at": "2026-09-05T03:31:07.509Z",
+      "synced_at": "2026-09-05T04:33:15Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -6069,9 +6069,9 @@
     },
     "packages/extra/linux612-extramodules/nvidia-470xx": {
       "archived": false,
-      "digest": "sha256:570b04d1f940037e02053bf7c85337e114c15e259c7c016b2d8b41ea8899e01d",
-      "last_activity_at": "2026-08-28T19:59:35.750Z",
-      "synced_at": "2026-08-29T02:57:50Z",
+      "digest": "sha256:93e01a43f7209098410573d5bb165b6e3b3268a27c616d558126adfe847bb92e",
+      "last_activity_at": "2026-09-05T03:31:13.175Z",
+      "synced_at": "2026-09-05T04:33:13Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -6129,9 +6129,9 @@
     },
     "packages/extra/linux612-extramodules/nvidia-580xx": {
       "archived": false,
-      "digest": "sha256:9854f7b94345627dc189c13172fea22810a0da4b877c6e2b9b509651dddddc99",
-      "last_activity_at": "2026-08-28T19:59:40.807Z",
-      "synced_at": "2026-08-29T02:57:49Z",
+      "digest": "sha256:194c2d41130f98e98fd27c9a144bbf4e3052cc67ce01a048b7c6c1c4bf32a1c9",
+      "last_activity_at": "2026-09-05T03:31:18.069Z",
+      "synced_at": "2026-09-05T04:33:12Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -6141,9 +6141,9 @@
     },
     "packages/extra/linux612-extramodules/nvidia-580xx-open": {
       "archived": false,
-      "digest": "sha256:0038a8073d71008e2a240148fb6781fdad92a291b01c313f6b9dc6125e238c1d",
-      "last_activity_at": "2026-08-28T19:59:46.866Z",
-      "synced_at": "2026-08-29T02:57:48Z",
+      "digest": "sha256:a4ea700fad0880698c68eba5351b04ed2c94574c598758040bcc79195a90a475",
+      "last_activity_at": "2026-09-05T03:31:24.442Z",
+      "synced_at": "2026-09-05T04:33:11Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -6153,9 +6153,9 @@
     },
     "packages/extra/linux612-extramodules/nvidia-open": {
       "archived": false,
-      "digest": "sha256:8d0f6ec655ef13fcc12cb8fb2a417b56f151d2fe5e12236fcb169b2a6631aa4a",
-      "last_activity_at": "2026-08-28T19:59:52.654Z",
-      "synced_at": "2026-08-29T02:57:48Z",
+      "digest": "sha256:3c1fce916313754b163a7d34b362ff832fd7c7c2c4d0acdf26146c79f316dde6",
+      "last_activity_at": "2026-09-05T03:31:29.142Z",
+      "synced_at": "2026-09-05T04:33:10Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -6165,9 +6165,9 @@
     },
     "packages/extra/linux612-extramodules/r8168": {
       "archived": false,
-      "digest": "sha256:664eac2800b43123fe66b5f9c30ed524117d004e8fde27444fcf724d730852d0",
-      "last_activity_at": "2026-08-28T19:59:59.862Z",
-      "synced_at": "2026-08-29T02:57:46Z",
+      "digest": "sha256:b93eab0622ed86494cd454aaa028ce1c671e9837bece9f8756841016bcf2d3d3",
+      "last_activity_at": "2026-09-05T03:31:34.611Z",
+      "synced_at": "2026-09-05T04:33:09Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -6177,9 +6177,9 @@
     },
     "packages/extra/linux612-extramodules/rtl8723bu": {
       "archived": false,
-      "digest": "sha256:f76a353c46f29a721ff3ba792548aa5ab43b61371b6ff4cf69626d0ea55c25fa",
-      "last_activity_at": "2026-08-28T20:00:09.327Z",
-      "synced_at": "2026-08-29T02:57:45Z",
+      "digest": "sha256:fad311b04b99465f9683496374aff7e4cc580e456bd79d81b160f50109860864",
+      "last_activity_at": "2026-09-05T03:31:39.847Z",
+      "synced_at": "2026-09-05T04:33:08Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -6189,9 +6189,9 @@
     },
     "packages/extra/linux612-extramodules/tp_smapi": {
       "archived": false,
-      "digest": "sha256:3e77fcd03991c6ca9f2cbbf77078d4a5a20e4db4c752166dabca609c592ff00e",
-      "last_activity_at": "2026-08-28T20:00:29.296Z",
-      "synced_at": "2026-08-29T02:57:43Z",
+      "digest": "sha256:37c0b9465ab036576020b4465869e66302dcd0f9d764905db2e1d9dfa79bba1c",
+      "last_activity_at": "2026-09-05T03:31:44.968Z",
+      "synced_at": "2026-09-05T04:33:07Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -6201,9 +6201,9 @@
     },
     "packages/extra/linux612-extramodules/vhba-module": {
       "archived": false,
-      "digest": "sha256:a3dbd3f8ea42cce09d4fcd94cb2fc6f58910d08a4f073f8d26ce550e8eaa1502",
-      "last_activity_at": "2026-08-28T20:01:14.990Z",
-      "synced_at": "2026-08-29T02:57:42Z",
+      "digest": "sha256:474e0ecfe19858468385d9dc787f5348fc563e32524c6fe5fd6a4a454eb36e3d",
+      "last_activity_at": "2026-09-05T03:31:50.142Z",
+      "synced_at": "2026-09-05T04:33:05Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -6213,9 +6213,9 @@
     },
     "packages/extra/linux612-extramodules/virtualbox": {
       "archived": false,
-      "digest": "sha256:f345598de2ed43cff89da24f4d96b0d2517b6f2cdfe5384a46c1348f08ded84d",
-      "last_activity_at": "2026-08-28T20:04:52.574Z",
-      "synced_at": "2026-08-29T02:57:41Z",
+      "digest": "sha256:f7ff96f6533384ae635c34656d15c36fe579c962c7067ac574174e778d21c47a",
+      "last_activity_at": "2026-09-05T03:31:55.472Z",
+      "synced_at": "2026-09-05T04:33:06Z",
       "topics": [
         "gitlab-mirror",
         "packages",
@@ -6225,9 +6225,9 @@
     },
     "packages/extra/linux612-extramodules/zfs": {
       "archived": false,
-      "digest": "sha256:85f342675f9f85861f8e5ee24abf1cee94b54261b062607ae96dfa2fc74d3c69",
-      "last_activity_at": "2026-08-30T11:42:41.361Z",
-      "synced_at": "2026-08-30T13:07:46Z",
+      "digest": "sha256:e5e770c221873c58ea825537945f7fff16205c810339b057f791f34b6d645ec3",
+      "last_activity_at": "2026-09-05T03:32:00.583Z",
+      "synced_at": "2026-09-05T04:33:04Z",
       "topics": [
         "gitlab-mirror",
         "packages",
