@@ -1700,9 +1700,9 @@
     },
     "packages/core/grub": {
       "archived": false,
-      "digest": "sha256:5cb1fd8e7c12d04dd07d5ba59fc0ae290d5c7b1dbced70feb59935b9a8a398ce",
-      "last_activity_at": "2026-08-10T19:16:44.382Z",
-      "synced_at": "2026-08-10T19:20:39Z",
+      "digest": "sha256:4f55715ff678d21023296a3ca6430f4e478891ca44e17dba33e5c12c345a798a",
+      "last_activity_at": "2026-09-05T14:33:25.836Z",
+      "synced_at": "2026-09-06T06:01:46Z",
       "topics": [
         "gitlab-mirror",
         "packages",
